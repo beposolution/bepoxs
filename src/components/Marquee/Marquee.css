@@ -1,0 +1,80 @@
+/* ============================================
+   MARQUEE — Dark Futuristic
+   ============================================ */
+
+.marquee {
+  padding: 1.25rem 0;
+  background: rgba(5, 13, 26, 0.8);
+  border-top: 1px solid rgba(0, 212, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+/* Fading edge masks */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(5, 13, 26, 0.95) 0%, transparent 100%);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(5, 13, 26, 0.95) 0%, transparent 100%);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 2rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.marquee__item:hover {
+  opacity: 1;
+  color: var(--color-cyan);
+}
+
+.marquee__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

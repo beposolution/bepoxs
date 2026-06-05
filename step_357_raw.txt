@@ -1,0 +1,120 @@
+Created At: 2026-06-05T05:22:12Z
+Completed At: 2026-06-05T05:22:12Z
+File Path: `file:///c:/Users/GRACE/beposoft_website/src/data/content.js`
+Total Lines: 465
+Total Bytes: 22645
+Showing lines 1 to 465
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: // ===========================
+2: // BEPOSOFT — SITE CONTENT DATA
+3: // ===========================
+4: 
+5: export const NAV_LINKS = [
+6:   { label: 'Services', href: '#services' },
+7:   { label: 'Portfolio', href: '#portfolio' },
+8:   { label: 'Process', href: '#process' },
+9:   { label: 'Technologies', href: '#technologies' },
+10:   { label: 'Contact', href: '#contact' },
+11: ];
+12: 
+13: export const SERVICES = [
+14:   {
+15:     id: 'web-dev',
+16:     title: 'Website Development',
+17:     description: 'Responsive business websites, landing pages, portfolio sites, and SEO-ready pages crafted with clean UI.',
+18:     icon: 'Globe',
+19:   },
+20:   {
+21:     id: 'web-app',
+22:     title: 'Web App Development',
+23:     description: 'Admin panels, dashboards, CRM/ERP modules, workflow systems, and custom operational business tools.',
+24:     icon: 'Monitor',
+25:   },
+26:   {
+27:     id: 'ecommerce',
+28:     title: 'E-commerce Platforms',
+29:     description: 'Product catalogue, shopping cart, wishlist, payment gateways, stock systems, and delivery workflows.',
+30:     icon: 'Briefcase',
+31:   },
+32:   {
+33:     id: 'mobile-app',
+34:     title: 'Mobile App Development',
+35:     description: 'Android and iOS apps with polished UI, API integrations, logins, push alerts, and app store deployment.',
+36:     icon: 'Smartphone',
+37:   },
+38:   {
+39:     id: 'uiux',
+40:     title: 'UI/UX Design',
+41:     description: 'User-centered wireframes, mockups, interactive prototypes, and custom asset layouts built for conversions.',
+42:     icon: 'Palette',
+43:   },
+44:   {
+45:     id: 'cloud',
+
+<truncated 21291 bytes>
+401:     company: 'RetailMax',
+402:     role: 'CEO',
+403:     rating: 5,
+404:   },
+405:   {
+406:     id: 4,
+407:     quote: 'Their UI/UX expertise completely changed how our users interact with our product. Conversion rates jumped 40% after the redesign.',
+408:     name: 'David Park',
+409:     company: 'CloudNova',
+410:     role: 'Head of Product',
+411:     rating: 5,
+412:   },
+413: ];
+414: 
+415: export const TEAM = [
+416:   {
+417:     name: 'Alex Morgan',
+418:     role: 'Founder & CEO',
+419:     bio: 'Visionary leader with 10+ years in software engineering and product strategy.',
+420:     linkedin: '#',
+421:     github: '#',
+422:   },
+423:   {
+424:     name: 'Priya Sharma',
+425:     role: 'Lead Designer',
+426:     bio: 'Award-winning designer passionate about creating delightful user experiences.',
+427:     linkedin: '#',
+428:     github: '#',
+429:   },
+430:   {
+431:     name: 'James Wilson',
+432:     role: 'Tech Lead',
+433:     bio: 'Full-stack architect specializing in scalable cloud-native applications.',
+434:     linkedin: '#',
+435:     github: '#',
+436:   },
+437:   {
+438:     name: 'Lisa Chen',
+439:     role: 'Mobile Lead',
+440:     bio: 'Cross-platform expert with a deep love for performance and pixel-perfect UIs.',
+441:     linkedin: '#',
+442:     github: '#',
+443:   },
+444: ];
+445: 
+446: export const MARQUEE_ITEMS = [
+447:   'React', 'Next.js', 'Node.js', 'Flutter', 'Swift', 'Firebase',
+448:   'MongoDB', 'AWS', 'PostgreSQL', 'Tailwind CSS', 'Bootstrap',
+449:   'JavaScript', 'TypeScript', 'HTML5', 'GraphQL', 'Figma', 'Kotlin', 'Kubernetes', 'Docker',
+450: ];
+451: 
+452: export const COMPANY_INFO = {
+453:   name: 'Beposoft',
+454:   tagline: 'Crafting digital experiences that drive growth.',
+455:   email: 'info@beposoft.com',
+456:   phone: '81578 45851',
+457:   location: 'Kochi, Kerala, India',
+458:   social: {
+459:     linkedin: '#',
+460:     github: '#',
+461:     twitter: '#',
+462:     instagram: '#',
+463:   },
+464: };
+465: 
+The above content shows the entire, complete file contents of the requested file.

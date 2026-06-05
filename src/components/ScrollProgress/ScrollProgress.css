@@ -1,0 +1,29 @@
+/* ============================================
+   SCROLL PROGRESS BAR — Dark Futuristic
+   ============================================ */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: calc(var(--z-sticky) + 10);
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #2979ff, #7c3aed, #00d4ff);
+  background-size: 300% 100%;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.6), 0 0 25px rgba(0, 212, 255, 0.3);
+  animation: progressGradient 3s linear infinite;
+}
+
+@keyframes progressGradient {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}

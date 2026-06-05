@@ -1,0 +1,59 @@
+Created At: 2026-06-05T04:52:10Z
+Completed At: 2026-06-05T04:52:10Z
+File Path: `file:///c:/Users/GRACE/beposoft_website/src/data/content.js`
+Total Lines: 460
+Total Bytes: 22352
+Showing lines 95 to 145
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+95:   },
+96: ];
+97: 
+98: export const PROJECTS = [
+99:   {
+100:     id: 3,
+101:     title: 'MEXPO Website',
+102:     category: 'Websites',
+103:     description: 'Corporate and industrial website with strong banner presentation and project-specific identity.',
+104:     tech: ['React', 'Node.js', 'Express'],
+105:     color: 'linear-gradient(135deg, #0d47a1, #1e88e5)',
+106:     url: 'http://mexpo.org/',
+107:     image: '/projects/mexpo.png',
+108:     images: [
+109:       '/images/image copy 24.png',
+110:       '/images/image copy 25.png',
+111:       '/images/image copy 26.png',
+112:       '/images/image copy 27.png'
+113:     ],
+114:     client: 'MEXPO Group',
+115:     duration: '2.5 Months',
+116:     role: 'Frontend Development & UI/UX Design',
+117:     metrics: '99.9% Uptime & 2x Load Speed',
+118:     longDescription: 'MEXPO required a modern, performant web presence that would showcase their extensive industrial operations, manufacturing capability, and project catalog to global B2B clients.',
+119:     challenge: 'Their existing website was built on legacy templates, leading to slow loading speeds on mobile devices, suboptimal search engine rankings, and an interface that failed to convey their scale and professionalism.',
+120:     solution: 'We engineered a responsive corporate website using React, optimized with asset preloading and lazy-loaded galleries. The solution includes a dynamic project presentation engine and an interactive product catalog.',
+121:     features: [
+122:       { title: 'Interactive Project Catalog', desc: 'A custom, filterable media gallery showcasing industrial installations with high-resolution imagery and specifications.' },
+123:       { title: 'B2B Inquiry Gateway', desc: 'A secure, responsive inquiry form connecting prospective clients directly with departmental heads for sales and partnerships.' },
+124:       { title: 'Global SEO Optimization', desc: 'Highly optimized metadata structure and semantic HTML tags resulting in top search result listings for critical industry keywords.' }
+125:     ]
+126:   },
+127:   {
+128:     id: 4,
+129:     title: 'Bepocart App',
+130:     category: 'Mobile Apps',
+131:     description: 'E-commerce mobile app experience for cycling products and accessories with cart, wishlist, and payments.',
+132:     tech: ['Flutter', 'Android SDK', 'iOS SDK'],
+133:     color: 'linear-gradient(135deg, #84cc16, #a3e635)',
+134:     url: 'https://play.google.com/store/apps/details?id=com.bepocart.bepocart&hl=en_IN',
+135:     image: '/projects/bepocart_app.png',
+136:     images: [
+137:       '/images/image.png',
+138:       '/images/image copy.png',
+139:       '/images/image copy 2.png',
+140:       '/images/image copy 3.png'
+141:     ],
+142:     client: 'Bepocart Ventures',
+143:     duration: '4 Months',
+144:     role: 'Cross-platform Mobile Development',
+145:     metrics: '10k+ Downloads, 4.8★ rating',
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

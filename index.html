@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Beposoft — Premium software services company specializing in web development, mobile apps, UI/UX design, cloud solutions, and digital transformation." />
+  <meta name="keywords"
+    content="software development, web development, mobile apps, UI/UX design, cloud solutions, Beposoft" />
+  <meta name="author" content="Beposoft" />
+  <meta name="theme-color" content="#00d4ff" />
+  <title>Beposoft — Premium Software Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="noise-overlay"></div>
+  <div id="global-bg-orbs">
+    <div class="g-orb g-orb-1"></div>
+    <div class="g-orb g-orb-2"></div>
+    <div class="g-orb g-orb-3"></div>
+    <div class="g-orb g-orb-4"></div>
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <style>
+    /* Global Background moving Orbs Wrapper */
+    #global-bg-orbs {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -2;
+      /* Placed behind all content and section wrappers */
+      opacity: 0.65;
+      transition: opacity 1s ease;
+    }
+
+    .g-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      will-change: transform, border-radius;
+    }
+
+    /* Orb 1: Classic Theme Blue */
+    .g-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, rgba(0, 212, 255, 0) 70%);
+      top: 10%;
+      left: -10%;
+      animation: floatOrbG1 32s ease-in-out infinite alternate;
+    }
+
+    /* Orb 2: Elegant Indigo/Purple */
+    .g-orb-2 {
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.10) 0%, rgba(124, 58, 237, 0) 70%);
+      top: 40%;
+      right: -15%;
+      animation: floatOrbG2 38s ease-in-out infinite alternate-reverse;
+    }
+
+    /* Orb 3: Cyan Light */
+    .g-orb-3 {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.10) 0%, rgba(0, 212, 255, 0) 70%);
+      bottom: 15%;
+      left: 10%;
+      animation: floatOrbG3 28s ease-in-out infinite alternate;
+    }
+
+    /* Orb 4: Corporate Emerald/Teal */
+    .g-orb-4 {
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, rgba(5, 150, 105, 0) 70%);
+      bottom: -10%;
+      right: 20%;
+      animation: floatOrbG4 34s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatOrbG1 {
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+      }
+
+      50% {
+        transform: translate(80px, 60px) scale(1.15) rotate(180deg);
+        border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%;
+      }
+
+      100% {
+        transform: translate(-40px, -50px) scale(0.9) rotate(360deg);
+        border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+      }
+    }
+
+    @keyframes floatOrbG2 {
+      0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 50%;
+      }
+
+      50% {
+        transform: translate(-90px, 80px) scale(1.1);
+        border-radius: 60% 40% 60% 40% / 50% 50% 50% 50%;
+      }
+
+      100% {
+        transform: translate(50px, -70px) scale(0.95);
+        border-radius: 50%;
+      }
+    }
+
+    @keyframes floatOrbG3 {
+      0% {
+        transform: translate(0, 0) scale(0.9);
+      }
+
+      50% {
+        transform: translate(100px, -80px) scale(1.15);
+      }
+
+      100% {
+        transform: translate(-60px, 60px) scale(1);
+      }
+    }
+
+    @keyframes floatOrbG4 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-80px, -50px) scale(1.12);
+      }
+
+      100% {
+        transform: translate(60px, 90px) scale(0.9);
+      }
+    }
+
+    /* Premium Process Timeline Card Hover lifts */
+    .process__card {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease !important;
+    }
+
+    .process__step:hover .process__card {
+      transform: translateY(-8px) scale(1.02) !important;
+      border-color: rgba(0, 212, 255, 0.3) !important;
+      box-shadow: 0 0 25px rgba(0, 212, 255, 0.12), 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* ============================================================
+         ATTRACTIVE WEBSITE ANIMATIONS (PROFESSIONAL TOUCH)
+         ============================================================ */
+
+    /* 1. Navbar Link Hover Shimmer */
+    .navbar__link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .navbar__link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: linear-gradient(90deg, #2196f3, #00d2ff);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .navbar__link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* 2. Glass Card Hover Transform */
+    .glass-card {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease !important;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(33, 150, 243, 0.4) !important;
+      box-shadow: 0 20px 40px rgba(33, 150, 243, 0.1) !important;
+    }
+
+    /* 3. Button Pulse and Lift */
+    .btn {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        background-position 0.4s ease !important;
+      background-size: 200% auto !important;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02) !important;
+      box-shadow: 0 10px 24px rgba(33, 150, 243, 0.25) !important;
+    }
+
+    /* 4. Ambient Background Orbs Float & Morph Animation */
+    @keyframes ambientOrbFloat {
+      0% {
+        transform: translate(0px, 0px) scale(1) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(30px, -50px) scale(1.08) rotate(120deg);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.95) rotate(240deg);
+      }
+
+      100% {
+        transform: translate(0px, 0px) scale(1) rotate(360deg);
+      }
+    }
+
+    .services__bg-orb,
+    .pd__orb,
+    .hero__bg-orb {
+      animation: ambientOrbFloat 24s ease-in-out infinite alternate !important;
+      will-change: transform;
+    }
+
+    /* 5. Logo Subtle Floating hover */
+    .navbar__logo {
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .navbar__logo:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    /* ============================================================
+         SERVICES SECTION BACKDROP ENHANCEMENTS (ATTRACTIVE & DYNAMIC)
+         ============================================================ */
+
+    /* Dynamic Moving Grid Overlay */
+    @keyframes gridMove {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 60px 60px;
+      }
+    }
+
+    .services::before {
+      animation: gridMove 30s linear infinite !important;
+      will-change: background-position;
+    }
+
+    /* Morphing Gradient Orbs */
+    @keyframes orbMorph {
+      0% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+
+      33% {
+        border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+        transform: translate(60px, -40px) scale(1.15) rotate(120deg);
+      }
+
+      66% {
+        border-radius: 30% 70% 35% 65% / 40% 60% 30% 70%;
+        transform: translate(-40px, 50px) scale(0.9) rotate(240deg);
+      }
+
+      100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+      }
+    }
+
+    .services__bg-orb {
+      width: 650px !important;
+      height: 650px !important;
+      filter: blur(90px) !important;
+      animation: orbMorph 22s ease-in-out infinite alternate !important;
+      opacity: 0.85;
+      will-change: transform, border-radius;
+    }
+
+    .services__bg-orb--1 {
+      background: radial-gradient(circle, rgba(33, 150, 243, 0.1) 0%, rgba(0, 212, 255, 0.05) 50%, transparent 70%) !important;
+      top: -15% !important;
+      right: -15% !important;
+    }
+
+    .services__bg-orb--2 {
+      background: radial-gradient(circle, rgba(162, 89, 255, 0.08) 0%, rgba(33, 150, 243, 0.04) 50%, transparent 70%) !important;
+      bottom: -15% !important;
+      left: -15% !important;
+      animation-delay: -11s !important;
+    }
+  </style>
+  <script>
+    (function () {
+      document.addEventListener('DOMContentLoaded', () => {
+        const servicesSection = document.querySelector('.services');
+        if (!servicesSection) return;
+
+        // Ensure relative positioning on services container so canvas anchors correctly
+        servicesSection.style.position = 'relative';
+
+        const canvas = document.createElement('canvas');
+        canvas.id = 'services-particles-canvas';
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '0'; // Behind service cards but above main background
+        servicesSection.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = servicesSection.offsetWidth;
+        let height = canvas.height = servicesSection.offsetHeight;
+
+        // Track container size changes
+        const resizeObserver = new ResizeObserver(() => {
+          width = canvas.width = servicesSection.offsetWidth;
+          height = canvas.height = servicesSection.offsetHeight;
+        });
+        resizeObserver.observe(servicesSection);
+
+        const particles = [];
+        const particleCount = 35;
+
+        class Particle {
+          constructor() {
+            this.reset();
+            this.y = Math.random() * height; // Start spread out
+          }
+
+          reset() {
+            this.x = Math.random() * width;
+            this.y = height + Math.random() * 20;
+            this.size = 1 + Math.random() * 3.5;
+            this.speed = 0.2 + Math.random() * 0.5;
+            this.vx = (Math.random() - 0.5) * 0.2;
+            this.alpha = 0.1 + Math.random() * 0.35;
+            this.hue = Math.random() > 0.4 ? 200 : 260; // Shifting between blue and purple
+          }
+
+          update() {
+            this.y -= this.speed;
+            this.x += this.vx;
+
+            // Wave motion
+            this.x += Math.sin(this.y * 0.005) * 0.15;
+
+            // Reset if goes off screen
+            if (this.y < -10 || this.x < -10 || this.x > width + 10) {
+              this.reset();
+            }
+          }
+
+          draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+
+            // Soft glow circle
+            const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 1.5);
+            grad.addColorStop(0, `hsla(${this.hue}, 90%, 65%, 1)`);
+            grad.addColorStop(1, `hsla(${this.hue}, 90%, 65%, 0)`);
+
+            ctx.fillStyle = grad;
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, width, height);
+
+          particles.forEach(p => {
+            p.update();
+            p.draw();
+          });
+
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+/* ============================================
+   SERVICES — Dark Futuristic
+   ============================================ */
+
+.services {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Subtle faint grid overlay */
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
+  pointer-events: none;
+}
+
+.services__bg-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: -1;
+}
+
+.services__bg-orb--1 {
+  top: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.07) 0%, transparent 70%);
+  animation: floatOrbSlow 15s ease-in-out infinite alternate;
+}
+
+.services__bg-orb--2 {
+  bottom: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(41, 121, 255, 0.07) 0%, transparent 70%);
+  animation: floatOrbSlow 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrbSlow {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Service Card */
+.service-card {
+  padding: 2rem;
+  cursor: default;
+  transition: all var(--transition-base);
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  background: var(--surface-2);
+  border: 1px solid var(--glass-border);
+}
+
+/* Conic gradient border animation on hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle, 0deg), transparent, var(--neon-cyan), transparent, var(--neon-blue), transparent);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+  animation: rotateAngle 3s linear infinite;
+}
+
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cyan);
+  margin-bottom: 1.25rem;
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.05);
+}
+
+/* Pulsing ring animation */
+.service-card__icon::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  border: 1.5px solid var(--neon-cyan);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.service-card:hover .service-card__icon::before {
+  animation: iconRingPulse 1.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes iconRingPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.service-card:hover .service-card__icon {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(41, 121, 255, 0.15));
+  color: var(--color-cyan);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+  transform: translateZ(20px);
+}
+
+.service-card__title {
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  transition: color var(--transition-fast);
+  color: var(--color-text-primary);
+}
+
+.service-card:hover .service-card__title {
+  color: var(--color-cyan);
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.service-card__desc {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.service-card:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px);
+}
+
+@media (max-width: 1024px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .services__grid { grid-template-columns: 1fr; }
+}

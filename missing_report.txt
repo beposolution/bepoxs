@@ -1,0 +1,65 @@
+Missing ranges:
+Lines 61 to 80
+  Before:
+    59: The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+    60: 
+  After:
+    81: 
+    82: 
+------------------------------
+Lines 146 to 149
+  Before:
+    144:     role: 'Cross-platform Mobile Development',
+    145:     metrics: '10k+ Downloads, 4.8★ rating',
+  After:
+    150:       { title: 'Seamless Payments', desc: 'Unified payment integration supporting credit cards, digital wallets, and UPI payments with absolute security.' },
+    151:       { title: 'Live Order Tracker', desc: 'Real-time order state progression tracking with automated push alerts from processing to courier delivery.' },
+------------------------------
+Lines 181 to 184
+  Before:
+    179:       { title: 'Live Asset Tracker', desc: 'Transactional audit trail of fuel cells and components across sectors, removing duplicate log conflicts.' },
+    180:       { title: 'Decryption Billing Portal', desc: 'Automated document compilers generating ledger sheets with multi-system conversion calculations.' },
+  After:
+    185:     id: 5,
+    186:     title: 'Be Call CRM',
+------------------------------
+Lines 201 to 214
+  Before:
+    199:     contain: true,
+    200:     client: 'Beposoft Sales Group',
+  After:
+    215:     title: 'Grocery App',
+    216:     category: 'Web Apps',
+------------------------------
+Lines 250 to 269
+  Before:
+    248:     color: 'linear-gradient(135deg, #0f172a, #1e293b)',
+    249:     url: 'https://bepositiveracing.com/',
+  After:
+    270:   {
+    271:     id: 7,
+------------------------------
+Lines 286 to 286
+  Before:
+    284:     ],
+    285:     contain: true,
+  After:
+    287:     duration: '5 Months',
+    288:     role: 'Mobile Architecture & Payment Systems',
+------------------------------
+Lines 331 to 354
+  Before:
+    329:     title: 'Bepocart Website',
+    330:     category: 'Web Apps',
+  After:
+    355: ];
+    356: 
+------------------------------
+Lines 379 to 380
+  Before:
+    377: export const TESTIMONIALS = [
+    378:   {
+  After:
+    381:   {
+    382:     id: 1,
+------------------------------

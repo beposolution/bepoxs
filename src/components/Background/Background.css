@@ -1,0 +1,257 @@
+/* ===================================================
+   BEPOSOFT LUXURY DARK BACKGROUND — APPLE & PORSCHE DESIGN
+   =================================================== */
+
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -100;
+  pointer-events: none;
+  overflow: hidden;
+  /* Deep void black ink base with warm luxury undertones */
+  background: radial-gradient(ellipse 140% 100% at 50% 0%,
+      #040810 0%,
+      #020408 60%,
+      #000000 100%);
+}
+
+/* Vignette overlay to frame page margins premium-style */
+.global-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(2, 4, 8, 0.6) 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Canvas for neural network particles */
+.global-bg__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+/* Layered dark luxury gradient mesh */
+.global-bg__mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 800px 600px at 15% 20%, rgba(0, 200, 240, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 85% 75%, rgba(26, 111, 255, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 400px at 60% 40%, rgba(123, 63, 228, 0.04) 0%, transparent 60%);
+  animation: meshPulse 22s ease-in-out infinite alternate;
+}
+
+@keyframes meshPulse {
+  0%   { opacity: 0.6; transform: scale(1); }
+  50%  { opacity: 0.95; transform: scale(1.03); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+/* Tech grid lines with radial fade */
+.global-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 200, 240, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 240, 0.035) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+  animation: gridDrift 50s linear infinite;
+}
+
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 88px 88px; }
+}
+
+/* Aurora orbs - morphing, translation, and brightness morph keyframes */
+.global-bg__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  will-change: transform, border-radius;
+  opacity: 0.75;
+}
+
+.global-bg__orb--1 {
+  width: 750px;
+  height: 750px;
+  top: -15%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(0, 200, 240, 0.08) 0%, transparent 70%);
+  animation: orbMorph1 36s ease-in-out infinite alternate;
+}
+
+.global-bg__orb--2 {
+  width: 650px;
+  height: 650px;
+  bottom: -10%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(26, 111, 255, 0.09) 0%, transparent 70%);
+  animation: orbMorph2 44s ease-in-out infinite alternate-reverse;
+}
+
+.global-bg__orb--3 {
+  width: 500px;
+  height: 500px;
+  top: 30%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(123, 63, 228, 0.05) 0%, transparent 70%);
+  animation: orbMorph1 52s ease-in-out infinite alternate 4s;
+}
+
+.global-bg__orb--4 {
+  width: 400px;
+  height: 400px;
+  top: 55%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(0, 200, 240, 0.04) 0%, transparent 70%);
+  animation: orbMorph2 40s ease-in-out infinite alternate 6s;
+}
+
+@keyframes orbMorph1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    filter: blur(100px) brightness(1);
+  }
+  33% {
+    transform: translate(70px, -90px) scale(1.18) rotate(120deg);
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+    filter: blur(120px) brightness(1.15);
+  }
+  66% {
+    transform: translate(-50px, 60px) scale(0.88) rotate(240deg);
+    border-radius: 30% 70% 70% 30% / 50% 60% 40% 50%;
+    filter: blur(110px) brightness(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(360deg);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    filter: blur(100px) brightness(1);
+  }
+}
+
+@keyframes orbMorph2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+    filter: blur(110px) brightness(1.05);
+  }
+  50% {
+    transform: translate(-80px, 40px) scale(1.12) rotate(-180deg);
+    border-radius: 30% 70% 70% 30% / 60% 40% 60% 40%;
+    filter: blur(130px) brightness(1.2);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(-360deg);
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+    filter: blur(110px) brightness(1.05);
+  }
+}
+
+/* 1px horizontal scanning line with a center glow loop */
+.global-bg__scanline {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    transparent 20%,
+    rgba(0, 200, 240, 0.3) 40%,
+    rgba(0, 200, 240, 0.7) 50%,
+    rgba(0, 200, 240, 0.3) 60%,
+    transparent 80%,
+    transparent 100%
+  );
+  filter: blur(1px);
+  animation: scanDown 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  box-shadow: 0 0 12px rgba(0, 200, 240, 0.2);
+}
+
+@keyframes scanDown {
+  0%   { top: -5px; opacity: 0; }
+  8%   { opacity: 0.95; }
+  92%  { opacity: 0.95; }
+  100% { top: 100vh; opacity: 0; }
+}
+
+/* Corner HUD decorators with breathing opacity (0.15 -> 0.5) over 5s */
+.global-bg__corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: rgba(0, 200, 240, 0.22);
+  border-style: solid;
+  animation: cornerBreath 5s ease-in-out infinite alternate;
+}
+
+.global-bg__corner--tl {
+  top: 20px;
+  left: 20px;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.global-bg__corner--tr {
+  top: 20px;
+  right: 20px;
+  border-width: 1.5px 1.5px 0 0;
+}
+
+.global-bg__corner--bl {
+  bottom: 20px;
+  left: 20px;
+  border-width: 0 0 1.5px 1.5px;
+}
+
+.global-bg__corner--br {
+  bottom: 20px;
+  right: 20px;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+@keyframes cornerBreath {
+  0%   { opacity: 0.15; }
+  100% { opacity: 0.5; }
+}
+
+/* Falling vertical data streams */
+.global-bg__stream {
+  position: absolute;
+  width: 1px;
+  height: 180px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(0, 200, 240, 0.25) 40%,
+    rgba(0, 200, 240, 0.6) 70%,
+    transparent 100%
+  );
+  animation: streamFall 10s linear infinite;
+  opacity: 0.6;
+}
+
+.global-bg__stream--1 {
+  left: 20%;
+  animation-delay: 0s;
+  animation-duration: 14s;
+}
+
+.global-bg__stream--2 {
+  right: 25%;
+  animation-delay: 5s;
+  animation-duration: 12s;
+}
+
+@keyframes streamFall {
+  0%   { top: -200px; opacity: 0; }
+  8%   { opacity: 0.7; }
+  92%  { opacity: 0.5; }
+  100% { top: 110vh; opacity: 0; }
+}

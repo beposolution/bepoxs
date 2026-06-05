@@ -1,0 +1,139 @@
+/* ============================================
+   TECHNOLOGIES — Dark Futuristic
+   ============================================ */
+
+.technologies {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Subtle grid overlay */
+.technologies::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.025) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+  pointer-events: none;
+}
+
+/* Glowing background orb */
+.technologies::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -20%;
+  left: 20%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: -1;
+}
+
+/* ── Infinite Marquee ── */
+.tech-marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Left/right fade mask */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  padding: 1.1rem 0;
+}
+
+.tech-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tech-marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.tech-marquee-row--left .tech-marquee-track {
+  animation: marqueeLeft 35s linear infinite;
+}
+
+.tech-marquee-row--right .tech-marquee-track {
+  animation: marqueeRight 35s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-33.3333%); }
+  100% { transform: translateX(0); }
+}
+
+/* Pause scroll on hover */
+.tech-marquee-wrapper:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Frosted glass pill chip */
+.tech-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.tech-chip:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tech-chip__icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-chip__name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .technologies__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .technologies__grid { grid-template-columns: repeat(2, 1fr); }
+}
