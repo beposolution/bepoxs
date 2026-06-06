@@ -129,7 +129,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <span className="footer__copyright">
-            © {currentYear} Beposoft. All rights reserved.
+            © {currentYear} Bepoxs. All rights reserved.
           </span>
           <div className="footer__bottom-links">
             <a href="#" className="footer__bottom-link">Privacy Policy</a>

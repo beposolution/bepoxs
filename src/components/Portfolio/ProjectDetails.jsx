@@ -18,6 +18,7 @@ const ARCHITECTURES = {
   7: { entry: 'myskates_app/lib/main.dart', tree: ['📁 lib/marketplace/p2p_listings.dart', '📁 lib/social/community_feed.dart', '📁 lib/payments/stripe_escrow.dart', '📄 pubspec.yaml', '📄 firebase.json'], details: { framework: 'Flutter SDK (Android & iOS)', backend: 'Firebase + Stripe webhooks', database: 'Firestore & Firebase Storage', hosting: 'Google & Apple App Stores' } },
   8: { entry: 'qdel_dispatch/lib/main.dart', tree: ['📁 lib/routing/gps_tracker.dart', '📁 lib/dispatch/route_opt.dart', '📁 lib/signatures/handover.dart', '📄 pubspec.yaml', '📄 package.json'], details: { framework: 'Flutter (iOS & Android)', backend: 'Django (REST API)', database: 'Google Maps API', hosting: 'GCP / App Stores' } },
   2: { entry: 'bepocart_storefront/pages/index.jsx', tree: ['📁 pages/product/[slug].jsx', '📁 components/Search.jsx', '📁 components/Checkout.jsx', '📄 package.json', '📄 next.config.js'], details: { framework: 'Next.js 14 App Router', backend: 'Next.js Server Actions', database: 'PostgreSQL + Redis layer', hosting: 'Vercel Edge Servers' } },
+  10: { entry: 'backbone_portal/src/main.jsx', tree: ['📁 src/dashboard/', '📁 src/auth/', '📄 package.json', '📄 vite.config.js'], details: { framework: 'React & TailwindCSS', backend: 'Node.js Express', database: 'PostgreSQL Server', hosting: 'GoDaddy' } },
 };
 
 /* ── Animated count-up metric ───────────────────── */
@@ -259,6 +260,7 @@ export default function ProjectDetails({ project }) {
                   6: { path: '/projects/beposoft_products.png', bg: primaryColor, scale: 'scale(1.5)' },
                   7: { path: '/projects/myskates.png', bg: '#022123', scale: 'none' },
                   8: { path: '/images/qdel.png', bg: '#ffffff', scale: 'none' },
+                  10: { path: '/images/bckbn logo.png', bg: '#ffffff', scale: 'scale(1.15)' },
                 };
 
                 const config = LOGO_CONFIGS[project.id];

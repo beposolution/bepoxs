@@ -11,38 +11,7 @@
   background: transparent;
 }
 
-/* Starfield background styles */
-.hero__starfield {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
 
-.hero__starfield .star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 0 0 4px #ffffff;
-  animation: starTwinkle infinite ease-in-out;
-}
-
-@keyframes starTwinkle {
-
-  0%,
-  100% {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-
-  50% {
-    opacity: 0.8;
-    transform: scale(1.2);
-  }
-}
 
 /* Drifting Radial Background Orbs */
 .hero__orb-drift {
@@ -1074,5 +1043,20 @@
 
   .hero__actions .btn {
     width: 100%;
+  }
+}
+
+/* Hero Mobile performance optimizations */
+@media (max-width: 768px) {
+  .hero__orb-drift,
+  .hero__orb,
+  .hero__scanner,
+  .hero__ring,
+  .hero__dot-grid,
+  .hero__plus,
+  .hero__bracket,
+  .hero__grid,
+  .hero__mesh {
+    display: none !important;
   }
 }

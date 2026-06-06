@@ -169,7 +169,7 @@ export default function Navbar({ currentProject }) {
             className="btn btn-primary navbar__cta"
             onClick={(e) => { handleRipple(e); handleNavLinkClick(e, '#contact'); }}
           >
-            Get a Quote
+            Start Your Journey
           </a>
         </div>
 

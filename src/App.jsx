@@ -174,6 +174,9 @@ function App() {
                 <Portfolio />
               </div>
               <div className="reveal-on-scroll">
+                <Testimonials />
+              </div>
+              <div className="reveal-on-scroll">
                 <Technologies />
               </div>
               <div className="reveal-on-scroll">

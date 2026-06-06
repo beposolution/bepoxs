@@ -168,7 +168,7 @@ export const PROJECTS = [
       '/images/image copy 35.png'
     ],
     contain: true,
-    client: 'Beposoft Operations',
+    client: 'Bepoxs Operations',
     duration: '8 Months',
     role: 'Full Stack Enterprise Engineering',
     metrics: '95% Operational Efficiency Gain',
@@ -197,7 +197,7 @@ export const PROJECTS = [
       '/images/image copy 7.png'
     ],
     contain: true,
-    client: 'Beposoft Sales Group',
+    client: 'Bepoxs Sales Group',
     duration: '1 Months',
     role: 'Mobile CRM Engineering',
     metrics: '2.5x Active Lead Follow-ups',
@@ -351,6 +351,33 @@ export const PROJECTS = [
       { title: 'Smart Search & Filters', desc: 'High-speed search capability parsing category matrices and product tags to return accurate results in milliseconds.' },
       { title: 'Secure One-Page Checkout', desc: 'A frictionless checkout design combining address autocompletion and multiple secure gateways to minimize buyer drop-offs.' }
     ]
+  },
+  {
+    id: 10,
+    title: 'Backbone',
+    category: 'Websites',
+    description: 'Enterprise operational dashboard and resource system managing client profiles and logistics.',
+    tech: ['React', 'Node.js', 'PostgreSQL'],
+    color: 'linear-gradient(135deg, #090e1a, #151d30)',
+    url: '#',
+    image: '/images/backbone1.png',
+    images: [
+      '/images/backbone1.png',
+      '/images/backbone2.png',
+      '/images/backbone3.png'
+    ],
+    client: 'Backbone',
+    duration: '1 day',
+    role: 'Full Stack Engineering & DevOps',
+    metrics: '99.9% Uptime & 40% Efficiency Lift',
+    longDescription: 'Backbone is a unified operations portal and enterprise resource planning dashboard. It acts as the operational nerve center to orchestrate logistics tracking, transaction audits, and employee directory management in a secure, performant workspace.',
+    challenge: 'Managing massive volumes of customer entries, supply chains, and transaction histories was causing bottlenecks on legacy setups. System latency and database lockups during concurrent queries delayed daily reporting.',
+    solution: 'We engineered a centralized React operational console powered by an optimized PostgreSQL data warehouse. Utilizing Redis caching layers and database scaling pools, we achieved lightning-fast load times and high scalability.',
+    features: [
+      { title: 'Operational Dashboard', desc: 'Real-time performance grids tracking daily logs, orders, and department-level resource states.' },
+      { title: 'Secure Audit Trail', desc: 'Immutable transaction logs tracking all administrative operations for full compliance and reporting.' },
+      { title: 'Scalable Cloud Flow', desc: 'Cloud deployment architecture scaling seamlessly with high traffic volumes.' }
+    ]
   }
 ];
 
@@ -380,34 +407,26 @@ export const TECHNOLOGIES = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    quote: 'Beposoft transformed our outdated platform into a modern, lightning-fast web application. Their attention to detail and commitment to quality exceeded all expectations.',
-    name: 'Sarah Chen',
-    company: 'FinTech Solutions Inc.',
-    role: 'CTO',
+    quote: 'Bepoxs transformed our outdated platform into a modern, lightning-fast web application. Their attention to detail and commitment to quality exceeded all expectations.',
+    name: 'Sarah Joji',
     rating: 5,
   },
   {
     id: 2,
     quote: 'The mobile app they built for us received a 4.8-star rating within the first month. The team was responsive, creative, and delivered ahead of schedule.',
-    name: 'Michael Rivera',
-    company: 'HealthBridge',
-    role: 'Product Manager',
+    name: 'George Kurien',
     rating: 5,
   },
   {
     id: 3,
-    quote: 'Working with Beposoft felt like having an in-house team. They understood our vision perfectly and built exactly what we needed — no compromises.',
-    name: 'Emma Thompson',
-    company: 'RetailMax',
-    role: 'CEO',
+    quote: 'Working with Bepoxs felt like having an in-house team. They understood our vision perfectly and built exactly what we needed — no compromises.',
+    name: 'Joseph K A',
     rating: 5,
   },
   {
     id: 4,
     quote: 'Their UI/UX expertise completely changed how our users interact with our product. Conversion rates jumped 40% after the redesign.',
-    name: 'David Park',
-    company: 'CloudNova',
-    role: 'Head of Product',
+    name: 'Fidha Fathima',
     rating: 5,
   },
 ];
@@ -450,7 +469,7 @@ export const MARQUEE_ITEMS = [
 ];
 
 export const COMPANY_INFO = {
-  name: 'Beposoft',
+  name: 'Bepoxs',
   tagline: 'Crafting digital experiences that drive growth.',
   email: 'info@beposoft.com',
   phone: '81578 45851',

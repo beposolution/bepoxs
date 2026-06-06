@@ -78,7 +78,11 @@ export default function Testimonials() {
                     {t.name.split(' ').map((n) => n[0]).join('')}
                   </div>
                   <span className="testimonial-card__name">{t.name}</span>
-                  <span className="testimonial-card__role">{t.role} at {t.company}</span>
+                  {t.role || t.company ? (
+                    <span className="testimonial-card__role">
+                      {t.role} {t.role && t.company ? 'at' : ''} {t.company}
+                    </span>
+                  ) : null}
                 </div>
               </div>
             ))}

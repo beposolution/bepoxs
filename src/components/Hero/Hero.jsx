@@ -63,10 +63,10 @@ export default function Hero() {
   const [memoryUsage, setMemoryUsage] = useState(142);
 
   useEffect(() => {
-    const codeString = `const Beposoft = require('beposoft');
+    const codeString = `const Bepoxs = require('bepoxs');
 
 // Create premium project
-const app = Beposoft.createApp({
+const app = Bepoxs.createApp({
   design: 'premium',
   performance: 'ultra',
   responsive: true
@@ -114,18 +114,7 @@ app.deploy(); // Status: Active!`;
       <div className="hero__grid" />
       <div className="hero__scanner" />
 
-      {/* Dynamic CSS-only starfield background */}
-      <div className="hero__starfield">
-        {Array.from({ length: 100 }).map((_, i) => {
-          const style = {
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 4}s`,
-            animationDuration: `${1.5 + Math.random() * 2.5}s`,
-          };
-          return <div key={i} className="star" style={style} />;
-        })}
-      </div>
+
 
       {/* Drifting radial gradient background orbs */}
       <div className="hero__orb-drift hero__orb-drift--1" />
@@ -252,7 +241,7 @@ app.deploy(); // Status: Active!`;
                   <span className="hero__code-dot hero__code-dot--yellow" />
                   <span className="hero__code-dot hero__code-dot--green" />
                 </div>
-                <div className="hero__code-title">beposoft.config.js</div>
+                <div className="hero__code-title">bepoxs.config.js</div>
                 <span className="hero__code-lang">JavaScript</span>
               </div>
               <div className="hero__code-body">

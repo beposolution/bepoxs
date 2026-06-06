@@ -255,3 +255,26 @@
   92%  { opacity: 0.5; }
   100% { top: 110vh; opacity: 0; }
 }
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  .global-bg__orb {
+    display: none !important;
+  }
+  .global-bg__mesh {
+    animation: none !important;
+    opacity: 0.4 !important;
+  }
+  .global-bg__grid {
+    animation: none !important;
+  }
+  .global-bg__scanline {
+    display: none !important;
+  }
+  .global-bg__stream {
+    display: none !important;
+  }
+  .global-bg__corner {
+    display: none !important;
+  }
+}
