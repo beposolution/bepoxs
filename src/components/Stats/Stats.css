@@ -72,16 +72,14 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue), var(--color-purple), var(--neon-cyan));
+  background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+              linear-gradient(90deg, var(--neon-cyan), var(--neon-blue), var(--color-purple), var(--neon-cyan)) border-box;
   background-size: 300% 100%;
+  border: 1px solid transparent;
   pointer-events: none;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
 }
 
 .stat-card:hover {
@@ -109,6 +107,8 @@
   background-clip: text;
   line-height: 1.1;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .stat-card__label {
@@ -118,6 +118,8 @@
   letter-spacing: 0.05em;
   font-family: var(--font-mono);
   text-transform: uppercase;
+  position: relative;
+  z-index: 2;
 }
 
 .stat-card__bar {
@@ -127,6 +129,8 @@
   border-radius: 2px;
   margin: 0.75rem auto 0;
   box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 1024px) {

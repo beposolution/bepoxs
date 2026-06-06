@@ -77,15 +77,13 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: conic-gradient(from var(--angle, 0deg), transparent, var(--neon-cyan), transparent, var(--neon-blue), transparent);
+  background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+              conic-gradient(from var(--angle, 0deg), transparent, var(--neon-cyan), transparent, var(--neon-blue), transparent) border-box;
+  border: 1px solid transparent;
   pointer-events: none;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
 }
 
 .service-card:hover::after {
@@ -106,6 +104,7 @@
   margin-bottom: 1.25rem;
   transition: all var(--transition-base);
   position: relative;
+  z-index: 2;
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.05);
 }
 
@@ -143,6 +142,8 @@
   margin-bottom: 0.75rem;
   transition: color var(--transition-fast);
   color: var(--color-text-primary);
+  position: relative;
+  z-index: 2;
 }
 
 .service-card:hover .service-card__title {
@@ -154,6 +155,8 @@
   font-size: var(--fs-small);
   color: var(--color-text-secondary);
   line-height: 1.7;
+  position: relative;
+  z-index: 2;
 }
 
 .service-card:hover {

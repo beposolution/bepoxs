@@ -308,27 +308,25 @@
   position: absolute;
   inset: -2px;
   border-radius: 50%;
-  background: conic-gradient(
-    from var(--angle, 0deg),
-    var(--neon-cyan) 0deg 30deg,
-    transparent 30deg 60deg,
-    var(--neon-blue) 60deg 90deg,
-    transparent 90deg 120deg,
-    var(--neon-cyan) 120deg 150deg,
-    transparent 150deg 180deg,
-    var(--neon-blue) 180deg 210deg,
-    transparent 210deg 240deg,
-    var(--neon-cyan) 240deg 270deg,
-    transparent 270deg 300deg,
-    var(--neon-blue) 300deg 330deg,
-    transparent 330deg 360deg
-  );
+  background: linear-gradient(var(--surface-2), var(--surface-2)) padding-box,
+              conic-gradient(
+                from var(--angle, 0deg),
+                var(--neon-cyan) 0deg 30deg,
+                transparent 30deg 60deg,
+                var(--neon-blue) 60deg 90deg,
+                transparent 90deg 120deg,
+                var(--neon-cyan) 120deg 150deg,
+                transparent 150deg 180deg,
+                var(--neon-blue) 180deg 210deg,
+                transparent 210deg 240deg,
+                var(--neon-cyan) 240deg 270deg,
+                transparent 270deg 300deg,
+                var(--neon-blue) 300deg 330deg,
+                transparent 330deg 360deg
+              ) border-box;
+  border: 2px solid transparent;
   pointer-events: none;
   z-index: -1;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
   animation: rotateAngle 6s linear infinite;
 }
 
@@ -379,16 +377,14 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue), var(--color-purple), var(--neon-cyan));
+  background: linear-gradient(rgba(4, 8, 16, 0.95), rgba(4, 8, 16, 0.95)) padding-box,
+              linear-gradient(90deg, var(--neon-cyan), var(--neon-blue), var(--color-purple), var(--neon-cyan)) border-box;
   background-size: 300% 100%;
+  border: 1px solid transparent;
   pointer-events: none;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.3s ease;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
 }
 
 .process__step:hover .process__card::after {
@@ -409,6 +405,8 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
+  position: relative;
+  z-index: 2;
 }
 
 .process__card-title {
@@ -418,6 +416,8 @@
   color: var(--color-text-primary);
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
+  position: relative;
+  z-index: 2;
 }
 
 .process__step:hover .process__card-title {
@@ -429,6 +429,8 @@
   font-size: 0.88rem;
   color: var(--color-text-secondary);
   line-height: 1.65;
+  position: relative;
+  z-index: 2;
 }
 
 .process__card-line {
@@ -439,6 +441,8 @@
   margin-top: 1rem;
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 0 6px rgba(0, 212, 255, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .process__step:hover .process__card-line { width: 48px; }

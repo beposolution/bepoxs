@@ -9,10 +9,10 @@ import './ProjectDetails.css';
 
 /* ── Architecture data map ──────────────────────── */
 const ARCHITECTURES = {
-  3: { entry: 'mexpo_website/src/index.js', tree: ['📁 src/components/Gallery.jsx', '📁 src/components/B2BGateway.jsx', '📁 src/utils/SEOManager.js', '📄 package.json', '📄 vite.config.js'], details: { framework: 'HTML5 & CSS3 Style Sheets', backend: 'Vanilla JS / Bootstrap Layouts', database: 'N/A (Decentralized static files)', hosting: 'AWS Cloudfront CDN & S3 static web host' } },
+  3: { entry: 'mexpo_website/src/index.js', tree: ['📁 src/components/Gallery.jsx', '📁 src/components/B2BGateway.jsx', '📁 src/utils/SEOManager.js', '📄 package.json', '📄 vite.config.js'], details: { framework: 'HTML5 & Bootstrap Layouts', backend: 'Django REST API Backend', database: 'PostgreSQL Database', hosting: 'Hostinger Linux VPS' } },
   4: { entry: 'bepocart_app/lib/main.dart', tree: ['📁 lib/blocs/cart_bloc.dart', '📁 lib/views/checkout_view.dart', '📁 lib/services/notifications.dart', '📄 pubspec.yaml', '📄 android/app/build.gradle'], details: { framework: 'Flutter SDK (Dart 3.x)', backend: 'Django (Python) Backend API', database: 'MongoDB Atlas & SQLite cache', hosting: 'Google Play / App Store' } },
   6: { entry: 'psage_erp/src/App.jsx', tree: ['📁 src/ledger/inventory_tracker.jsx', '📁 src/billing/invoice_generator.jsx', '📁 src/auth/rbac_middleware.jsx', '📄 package.json', '📄 server/db/schema.sql'], details: { framework: 'React (Redux) & Flutter Mobile App', backend: 'Django REST API Framework', database: 'PostgreSQL with triggers', hosting: 'Docker Swarm / App Stores' } },
-  5: { entry: 'becall_crm/lib/main.dart', tree: ['📁 lib/telephony/call_receiver.dart', '📁 lib/blocs/sales_bloc.dart', '📁 lib/services/firebase_sync.dart', '📄 pubspec.yaml', '📄 ios/Runner/Info.plist'], details: { framework: 'Flutter (iOS / Android Client)', backend: 'Django REST API Backend', database: 'Cloud Firestore & Firebase DB', hosting: 'Internal Enterprise dist.' } },
+  5: { entry: 'becall_crm/lib/main.dart', tree: ['📁 lib/telephony/call_receiver.dart', '📁 lib/blocs/sales_bloc.dart', '📁 lib/services/firebase_sync.dart', '📄 pubspec.yaml', '📄 ios/Runner/Info.plist'], details: { framework: 'Flutter (iOS / Android Client)', backend: 'Django REST API Backend', database: 'Cloud Firestore & Firebase DB', hosting: 'GoDaddy' } },
   9: { entry: 'grocery_platform/manage.py', tree: ['📁 grocery/views/catalog_view.py', '📁 grocery/search/indexing.py', '📁 grocery/models/delivery.py', '📄 requirements.txt', '📄 config/settings.py'], details: { framework: 'Django & Flutter App Clients', backend: 'Django Python REST Controller', database: 'SQLite Dev / PostgreSQL Prod', hosting: 'Vercel Serverless + Redis' } },
   1: { entry: 'racing_landing/src/main.jsx', tree: ['📁 src/sections/VideoHeader.jsx', '📁 src/components/RaceTimeline.jsx', '📁 src/sections/Sponsors.jsx', '📄 tailwind.config.js', '📄 vite.config.js'], details: { framework: 'React / Vite + TailwindCSS', backend: 'Static + serverless API', database: 'N/A (JSON state)', hosting: 'Cloudflare Pages edge' } },
   7: { entry: 'myskates_app/lib/main.dart', tree: ['📁 lib/marketplace/p2p_listings.dart', '📁 lib/social/community_feed.dart', '📁 lib/payments/stripe_escrow.dart', '📄 pubspec.yaml', '📄 firebase.json'], details: { framework: 'Flutter SDK (Android & iOS)', backend: 'Firebase + Stripe webhooks', database: 'Firestore & Firebase Storage', hosting: 'Google & Apple App Stores' } },
@@ -385,20 +385,23 @@ export default function ProjectDetails({ project }) {
                       <h3>Technology Stack</h3>
                     </div>
                     <div className="pd__tech-grid">
-                      {[
-                        { Icon: Code2, label: 'Frontend', val: project.tech[0] || 'React' },
-                        { Icon: Server, label: 'Backend', val: project.tech[1] || 'Node.js' },
-                        { Icon: Database, label: 'Database', val: project.tech[2] || 'PostgreSQL' },
-                        { Icon: Cloud, label: 'Deployment', val: 'Cloud Hosted' },
-                      ].map(({ Icon, label, val }) => (
-                        <div key={label} className="pd__tech-item">
-                          <div className="pd__tech-icon"><Icon size={16} /></div>
-                          <div>
-                            <span className="pd__tech-label">{label}</span>
-                            <span className="pd__tech-val">{val}</span>
+                      {(() => {
+                        const arch = ARCHITECTURES[project.id] || { details: {} };
+                        return [
+                          { Icon: Code2, label: 'Frontend', val: arch.details.framework || project.tech[0] || 'React' },
+                          { Icon: Server, label: 'Backend', val: arch.details.backend || project.tech[1] || 'Node.js' },
+                          { Icon: Database, label: 'Database', val: arch.details.database || project.tech[2] || 'PostgreSQL' },
+                          { Icon: Cloud, label: 'Deployment', val: arch.details.hosting || project.tech[3] || 'Cloud Hosted' },
+                        ].map(({ Icon, label, val }) => (
+                          <div key={label} className="pd__tech-item">
+                            <div className="pd__tech-icon"><Icon size={16} /></div>
+                            <div>
+                              <span className="pd__tech-label">{label}</span>
+                              <span className="pd__tech-val">{val}</span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ));
+                      })()}
                     </div>
                   </motion.div>
                 )}
@@ -418,7 +421,6 @@ export default function ProjectDetails({ project }) {
                       { Icon: User, label: 'Client', val: project.client || 'Beposoft Partner' },
                       { Icon: Clock, label: 'Timeline', val: project.duration || 'Flexible' },
                       { Icon: Briefcase, label: 'Role', val: project.role || 'Full Stack Engineering' },
-                      { Icon: Calendar, label: 'Year', val: '2025 – 2026' },
                     ].map(({ Icon, label, val }) => (
                       <li key={label}>
                         <div className="pd__meta-icon-wrap"><Icon size={15} /></div>

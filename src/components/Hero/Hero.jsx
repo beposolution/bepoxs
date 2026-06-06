@@ -206,7 +206,7 @@ app.deploy(); // Status: Active!`;
               variants={fadeUp}
             >
               <a href="#contact" className="btn btn-primary" onClick={handleRipple}>
-                Get a Quote
+                Get Started
                 <ArrowRight size={18} />
               </a>
               <a href="#portfolio" className="btn btn-secondary" onClick={handleRipple}>
