@@ -5,15 +5,15 @@ import emailjs from '@emailjs/browser';
 import { COMPANY_INFO, SERVICES } from '../../data/content';
 import './Contact.css';
 
-const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   /* ── Status: "idle" | "sending" | "success" | "error" ── */
   const [status, setStatus] = useState('idle');
 
-  const formRef  = useRef(null);
+  const formRef = useRef(null);
   const titleRef = useRef(null);
   const [titleInView, setTitleInView] = useState(false);
 
@@ -54,7 +54,7 @@ export default function Contact() {
     const radius = diameter / 2;
     circle.style.width = circle.style.height = `${diameter}px`;
     circle.style.left = `${e.clientX - btn.getBoundingClientRect().left - radius}px`;
-    circle.style.top  = `${e.clientY - btn.getBoundingClientRect().top  - radius}px`;
+    circle.style.top = `${e.clientY - btn.getBoundingClientRect().top - radius}px`;
     circle.classList.add('ripple');
     const existing = btn.querySelector('.ripple');
     if (existing) existing.remove();
@@ -164,6 +164,34 @@ export default function Contact() {
               <label className="form-group__label" htmlFor="contact-name">Your Name</label>
             </div>
 
+            {/* <div className="form-group">
+              <input
+                type="number"
+                name="phone"
+                className="form-group__input"
+                placeholder=" "
+                required
+                id="contact-phone"
+              />
+              <label className="form-group__label" htmlFor="contact-phone">your phone number </label>
+            </div> */}
+
+            <div className="form-group">
+              <input
+                type="tel"
+                name="phone"
+                className="form-group__input"
+                placeholder=" "
+                required
+                id="contact-phone"
+                pattern="[0-9]{10}"
+                maxLength="10"
+              />
+              <label className="form-group__label" htmlFor="contact-phone">
+                your phone number
+              </label>
+            </div>
+
             {/* ── Email Address ── */}
             <div className="form-group">
               <input
@@ -180,7 +208,7 @@ export default function Contact() {
             {/* ── Service Needed ── */}
             <div className="form-group">
               <label className="form-group__select-label" htmlFor="contact-service">Service Needed</label>
-              <select
+              {/* <select
                 name="service_needed"
                 className="form-group__select"
                 required
@@ -189,6 +217,42 @@ export default function Contact() {
                 <option value="">Select a service</option>
                 {SERVICES.map((s) => (
                   <option key={s.id} value={s.title}>{s.title}</option>
+                ))}
+              </select> */}
+              <select
+                name="service_needed"
+                required
+                id="contact-service"
+                style={{
+                  width: "100%",
+                  backgroundColor: "#050b14",
+                  color: "#fff",
+                  border: "1px solid #00d9ff",
+                  padding: "15px",
+                  outline: "none"
+                }}
+              >
+                <option
+                  value=""
+                  style={{
+                    backgroundColor: "#050b14",
+                    color: "#fff"
+                  }}
+                >
+                  Select a service
+                </option>
+
+                {SERVICES.map((s) => (
+                  <option
+                    key={s.id}
+                    value={s.title}
+                    style={{
+                      backgroundColor: "#050b14",
+                      color: "#fff"
+                    }}
+                  >
+                    {s.title}
+                  </option>
                 ))}
               </select>
             </div>
