@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Code2, Cpu, Database, Globe, CheckCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Briefcase, Code2, Cpu, Database, Globe, CheckCircle, ShieldCheck, Sparkles } from 'lucide-react';
 import './Hero.css';
 
-const titleWords = ['We Build', 'Digital', 'Products', 'That Matter'];
+const titleWords = ['Every', 'Brand', 'Has A', 'Story.'];
 
 const wordVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -33,7 +33,7 @@ const renderCode = (text) => {
     let html = line
       .replace(/(const|let|var|function|return|import|from)/g, '<span class="code-keyword">$1</span>')
       .replace(/(require)/g, '<span class="code-function">$1</span>')
-      .replace(/(init|launch|createApp|deploy)/g, '<span class="code-method">$1</span>')
+      .replace(/(createPartnership|scaleSustainably|launchCampaign)/g, '<span class="code-method">$1</span>')
       .replace(/('[^']*')/g, '<span class="code-string">$1</span>')
       .replace(/(true|false)/g, '<span class="code-boolean">$1</span>')
       .replace(/(\/\/.*)/g, '<span class="code-comment">$1</span>');
@@ -59,21 +59,20 @@ export default function Hero() {
   };
 
   const [typedCode, setTypedCode] = useState('');
-  const [cpuUsage, setCpuUsage] = useState(12);
-  const [memoryUsage, setMemoryUsage] = useState(142);
+  const [activeAdReach, setActiveAdReach] = useState(15.2);
 
   useEffect(() => {
-    const codeString = `const Bepoxs = require('bepoxs');
+    const codeString = `const Bepoxs = require('bepoxs-growth');
 
-// Create premium project
-const app = Bepoxs.createApp({
-  design: 'premium',
-  performance: 'ultra',
-  responsive: true
+// Every Story Deserves to Grow.
+const partner = Bepoxs.createPartnership({
+  vision: 'Future-Ready Digital Growth',
+  pillars: ['Branding', 'Strategy', 'Performance', 'Websites'],
+  philosophy: 'Creativity with Purpose'
 });
 
-// Deploy to cloud
-app.deploy(); // Status: Active!`;
+// Launch unified growth engine
+partner.scaleSustainably(); // Status: Trusted Brand Built!`;
 
     let currentText = '';
     let index = 0;
@@ -84,14 +83,14 @@ app.deploy(); // Status: Active!`;
         currentText += codeString[index];
         setTypedCode(currentText);
         index++;
-        timer = setTimeout(typeChar, 30);
+        timer = setTimeout(typeChar, 25);
       } else {
         timer = setTimeout(() => {
           currentText = '';
           index = 0;
           setTypedCode('');
           typeChar();
-        }, 4000);
+        }, 4500);
       }
     };
 
@@ -101,9 +100,8 @@ app.deploy(); // Status: Active!`;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCpuUsage(Math.floor(Math.random() * 8) + 8);
-      setMemoryUsage(Math.floor(Math.random() * 6) + 138);
-    }, 2000);
+      setActiveAdReach((prev) => +(prev + (Math.random() * 0.1 - 0.04)).toFixed(1));
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -113,8 +111,6 @@ app.deploy(); // Status: Active!`;
       <div className="hero__mesh" />
       <div className="hero__grid" />
       <div className="hero__scanner" />
-
-
 
       {/* Drifting radial gradient background orbs */}
       <div className="hero__orb-drift hero__orb-drift--1" />
@@ -126,21 +122,18 @@ app.deploy(); // Status: Active!`;
         <div className="hero__orb hero__orb--2" />
         <div className="hero__orb hero__orb--3" />
 
-        {/* SVG Decorative concentric rings */}
         <svg className="hero__ring hero__ring--1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="48" stroke="var(--color-blue-300)" strokeWidth="0.5" strokeDasharray="4 6" opacity="0.4" />
-          <circle cx="50" cy="50" r="38" stroke="var(--color-blue-500)" strokeWidth="0.25" opacity="0.3" />
+          <circle cx="50" cy="50" r="48" stroke="var(--electric-blue)" strokeWidth="0.5" strokeDasharray="4 6" opacity="0.4" />
+          <circle cx="50" cy="50" r="38" stroke="var(--bright-azure)" strokeWidth="0.25" opacity="0.3" />
         </svg>
 
-        {/* SVG Dot grid */}
         <svg className="hero__dot-grid" width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
           <pattern id="dotpattern" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" fill="var(--color-blue-500)" opacity="0.15" />
+            <circle cx="2" cy="2" r="1.5" fill="var(--electric-blue)" opacity="0.18" />
           </pattern>
           <rect width="180" height="180" fill="url(#dotpattern)" />
         </svg>
 
-        {/* Decorative elements */}
         <span className="hero__plus hero__plus--1">+</span>
         <span className="hero__plus hero__plus--2">+</span>
         <span className="hero__bracket hero__bracket--1">&#123;</span>
@@ -156,8 +149,8 @@ app.deploy(); // Status: Active!`;
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
-              <span className="hero__badge-dot" />
-              Available for new projects
+              <Sparkles size={14} style={{ color: 'var(--electric-blue)' }} />
+              Future-Ready Digital Growth
             </motion.div>
 
             <h1 className="hero__title">
@@ -183,8 +176,8 @@ app.deploy(); // Status: Active!`;
               animate="visible"
               variants={fadeUp}
             >
-              We're a team of designers and engineers who craft premium websites,
-              web apps, and mobile apps for ambitious brands ready to scale.
+              At Bepoxs, we combine branding, content, performance marketing, and strategy
+              into one unified growth engine to help ambitious businesses build brands people trust and remember.
             </motion.p>
 
             <motion.div
@@ -195,20 +188,18 @@ app.deploy(); // Status: Active!`;
               variants={fadeUp}
             >
               <a href="#contact" className="btn btn-primary" onClick={handleRipple}>
-                Get Started
+                Start Your Journey
                 <ArrowRight size={18} />
               </a>
-              <a href="#portfolio" className="btn btn-secondary" onClick={handleRipple}>
-                <Briefcase size={18} />
-                View Our Work
+              <a href="#services" className="btn btn-secondary" onClick={handleRipple}>
+                <Sparkles size={18} />
+                Explore Services
               </a>
             </motion.div>
           </div>
 
-          {/* Premium Right-side Visual Panels */}
+          {/* Right Visual Panel */}
           <div className="hero__visual">
-
-            {/* Background Radar & Orbits */}
             <div className="hero__radar">
               <div className="hero__radar-ring hero__radar-ring--1" />
               <div className="hero__radar-ring hero__radar-ring--2" />
@@ -228,7 +219,7 @@ app.deploy(); // Status: Active!`;
               </div>
             </div>
 
-            {/* 1. Code Editor Widget */}
+            {/* Code Editor Widget */}
             <motion.div
               className="hero__code-window"
               initial={{ opacity: 0, x: -40, rotateY: -15 }}
@@ -241,7 +232,7 @@ app.deploy(); // Status: Active!`;
                   <span className="hero__code-dot hero__code-dot--yellow" />
                   <span className="hero__code-dot hero__code-dot--green" />
                 </div>
-                <div className="hero__code-title">bepoxs.config.js</div>
+                <div className="hero__code-title">bepoxs.growth.js</div>
                 <span className="hero__code-lang">JavaScript</span>
               </div>
               <div className="hero__code-body">
@@ -254,7 +245,7 @@ app.deploy(); // Status: Active!`;
               </div>
             </motion.div>
 
-            {/* 2. Active Deployment / Metrics Widget */}
+            {/* Active Metrics Widget */}
             <motion.div
               className="hero__chart-window"
               initial={{ opacity: 0, x: 40, y: 50, rotateX: 10 }}
@@ -262,7 +253,7 @@ app.deploy(); // Status: Active!`;
               transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="hero__chart-header">
-                <div className="hero__chart-title">System Status</div>
+                <div className="hero__chart-title">Growth System</div>
                 <div className="hero__chart-status">
                   <span className="hero__chart-status-dot animate-pulse" />
                   Active
@@ -272,31 +263,31 @@ app.deploy(); // Status: Active!`;
               <div className="hero__pipeline">
                 <div className="hero__pipeline-step success">
                   <CheckCircle size={14} className="hero__pipeline-icon" />
-                  <span>Build Success</span>
+                  <span>Strategy Aligned</span>
                 </div>
                 <div className="hero__pipeline-step success">
                   <CheckCircle size={14} className="hero__pipeline-icon" />
-                  <span>Tests Passed</span>
+                  <span>Creativity Active</span>
                 </div>
                 <div className="hero__pipeline-step active">
                   <div className="hero__pipeline-spinner" />
-                  <span>Deploying Live</span>
+                  <span>Scaling ROI</span>
                 </div>
               </div>
 
               <div className="hero__metrics-grid">
                 <div className="hero__metric-box">
-                  <span className="hero__metric-label">CPU Usage</span>
-                  <span className="hero__metric-val">{cpuUsage}%</span>
+                  <span className="hero__metric-label">Ad Reach</span>
+                  <span className="hero__metric-val">{activeAdReach}M+</span>
                 </div>
                 <div className="hero__metric-box">
-                  <span className="hero__metric-label">Memory</span>
-                  <span className="hero__metric-val">{memoryUsage}MB</span>
+                  <span className="hero__metric-label">Avg ROI</span>
+                  <span className="hero__metric-val">+250%</span>
                 </div>
               </div>
             </motion.div>
 
-            {/* 3. Floating Success Pill */}
+            {/* Floating Success Pill */}
             <motion.div
               className="hero__stat-pill"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -304,9 +295,8 @@ app.deploy(); // Status: Active!`;
               transition={{ duration: 0.6, delay: 1.1 }}
             >
               <ShieldCheck size={16} className="hero__stat-icon" />
-              <span className="hero__stat-text">Production Ready</span>
+              <span className="hero__stat-text">Partner Focused</span>
             </motion.div>
-
           </div>
         </div>
       </div>

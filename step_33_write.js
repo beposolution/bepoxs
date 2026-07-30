@@ -1,1 +1,0 @@
-"    tech: ['Django', 'Python', 'SQLite'],\n    color: 'linear-gradient(135deg, #059669, #34d399)',\n    url: '#',"

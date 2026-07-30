@@ -9,16 +9,56 @@ import './ProjectDetails.css';
 
 /* ── Architecture data map ──────────────────────── */
 const ARCHITECTURES = {
-  3: { entry: 'mexpo_website/src/index.js', tree: ['📁 src/components/Gallery.jsx', '📁 src/components/B2BGateway.jsx', '📁 src/utils/SEOManager.js', '📄 package.json', '📄 vite.config.js'], details: { framework: 'HTML5 & Bootstrap Layouts', backend: 'Django REST API Backend', database: 'PostgreSQL Database', hosting: 'Hostinger Linux VPS' } },
-  4: { entry: 'bepocart_app/lib/main.dart', tree: ['📁 lib/blocs/cart_bloc.dart', '📁 lib/views/checkout_view.dart', '📁 lib/services/notifications.dart', '📄 pubspec.yaml', '📄 android/app/build.gradle'], details: { framework: 'Flutter SDK (Dart 3.x)', backend: 'Django (Python) Backend API', database: 'MongoDB Atlas & SQLite cache', hosting: 'Google Play / App Store' } },
-  6: { entry: 'psage_erp/src/App.jsx', tree: ['📁 src/ledger/inventory_tracker.jsx', '📁 src/billing/invoice_generator.jsx', '📁 src/auth/rbac_middleware.jsx', '📄 package.json', '📄 server/db/schema.sql'], details: { framework: 'React (Redux) & Flutter Mobile App', backend: 'Django REST API Framework', database: 'PostgreSQL with triggers', hosting: 'Docker Swarm / App Stores' } },
-  5: { entry: 'becall_crm/lib/main.dart', tree: ['📁 lib/telephony/call_receiver.dart', '📁 lib/blocs/sales_bloc.dart', '📁 lib/services/firebase_sync.dart', '📄 pubspec.yaml', '📄 ios/Runner/Info.plist'], details: { framework: 'Flutter (iOS / Android Client)', backend: 'Django REST API Backend', database: 'Cloud Firestore & Firebase DB', hosting: 'GoDaddy' } },
-  9: { entry: 'grocery_platform/manage.py', tree: ['📁 grocery/views/catalog_view.py', '📁 grocery/search/indexing.py', '📁 grocery/models/delivery.py', '📄 requirements.txt', '📄 config/settings.py'], details: { framework: 'Django & Flutter App Clients', backend: 'Django Python REST Controller', database: 'SQLite Dev / PostgreSQL Prod', hosting: 'Vercel Serverless + Redis' } },
-  1: { entry: 'racing_landing/src/main.jsx', tree: ['📁 src/sections/VideoHeader.jsx', '📁 src/components/RaceTimeline.jsx', '📁 src/sections/Sponsors.jsx', '📄 tailwind.config.js', '📄 vite.config.js'], details: { framework: 'React / Vite + TailwindCSS', backend: 'Static + serverless API', database: 'N/A (JSON state)', hosting: 'Cloudflare Pages edge' } },
-  7: { entry: 'myskates_app/lib/main.dart', tree: ['📁 lib/marketplace/p2p_listings.dart', '📁 lib/social/community_feed.dart', '📁 lib/payments/stripe_escrow.dart', '📄 pubspec.yaml', '📄 firebase.json'], details: { framework: 'Flutter SDK (Android & iOS)', backend: 'Firebase + Stripe webhooks', database: 'Firestore & Firebase Storage', hosting: 'Google & Apple App Stores' } },
-  8: { entry: 'qdel_dispatch/lib/main.dart', tree: ['📁 lib/routing/gps_tracker.dart', '📁 lib/dispatch/route_opt.dart', '📁 lib/signatures/handover.dart', '📄 pubspec.yaml', '📄 package.json'], details: { framework: 'Flutter (iOS & Android)', backend: 'Django (REST API)', database: 'Google Maps API', hosting: 'GCP / App Stores' } },
-  2: { entry: 'bepocart_storefront/pages/index.jsx', tree: ['📁 pages/product/[slug].jsx', '📁 components/Search.jsx', '📁 components/Checkout.jsx', '📄 package.json', '📄 next.config.js'], details: { framework: 'Next.js 14 App Router', backend: 'Next.js Server Actions', database: 'PostgreSQL + Redis layer', hosting: 'Vercel Edge Servers' } },
-  10: { entry: 'backbone_portal/src/main.jsx', tree: ['📁 src/dashboard/', '📁 src/auth/', '📄 package.json', '📄 vite.config.js'], details: { framework: 'React & TailwindCSS', backend: 'Node.js Express', database: 'PostgreSQL Server', hosting: 'GoDaddy' } },
+  3: {
+    entry: 'campaign_mexpo/seo_audit.json',
+    tree: ['📁 ad_campaigns/', '📁 seo_keyword_mapping/', '📄 analytics_config.ga4', '📄 google_search_console.csv', '📄 semrush_backlinks.csv'],
+    details: { channel: 'Organic Search (SEO)', platforms: 'Google Analytics 4 & Search Console', tools: 'SEMrush, Screaming Frog', focus: 'Industrial Keyword Rankings' }
+  },
+  4: {
+    entry: 'campaign_bepocart/paid_search.config',
+    tree: ['📁 meta_ads/', '📁 google_ads_search/', '📄 target_audiences.json', '📄 ROAS_tracker.xlsx', '📄 ad_creatives_performance.csv'],
+    details: { channel: 'Paid Advertising (PPC)', platforms: 'Google Merchant, Meta Ads, Pinterest', tools: 'Google Ads Editor, Meta Business Suite', focus: 'Cost Per Acquisition (CPA) Reduction' }
+  },
+  6: {
+    entry: 'campaign_psage/inbound_funnels.json',
+    tree: ['📁 lead_magnets/', '📁 email_flows/', '📄 newsletter_campaigns.csv', '📄 lead_scoring_rules.py', '📄 hubspot_integration.config'],
+    details: { channel: 'Inbound & Email Marketing', platforms: 'HubSpot CRM, ActiveCampaign', tools: 'ActiveCampaign, Zapier, Canva', focus: 'B2B Lead Nurturing & MQL Scoring' }
+  },
+  5: {
+    entry: 'campaign_becall/funnel_optimization.csv',
+    tree: ['📁 conversion_funnels/', '📁 custom_landing_pages/', '📄 lead_form_a_b_test.json', '📄 hotjar_heatmaps.config', '📄 bounce_rate_analytics.csv'],
+    details: { channel: 'Conversion Rate Optimization', platforms: 'Hotjar, Google Optimize, VWO', tools: 'Figma, Hotjar, Google Tag Manager', focus: 'Form Submissions & Lead Capture Rates' }
+  },
+  9: {
+    entry: 'campaign_grocery/local_seo.geojson',
+    tree: ['📁 local_listings/', '📁 hyperlocal_ads/', '📄 google_maps_optimization.csv', '📄 local_citations.json', '📄 geo_targeted_audiences.csv'],
+    details: { channel: 'Local SEO & Geo-Targeting', platforms: 'Google Business Profile, Apple Maps', tools: 'BrightLocal, Yext, Google Ads', focus: 'Local Map Pack Visibility' }
+  },
+  1: {
+    entry: 'campaign_racing/brand_awareness.social',
+    tree: ['📁 instagram_grid/', '📁 tiktok_video_strategy/', '📄 influencer_collabs.json', '📄 viral_reach_analytics.csv', '📄 brand_sentiment_report.pdf'],
+    details: { channel: 'Social Media & Brand Strategy', platforms: 'Instagram, TikTok, YouTube', tools: 'Sprout Social, Figma, CapCut', focus: 'Audience Engagement & Viral Growth' }
+  },
+  7: {
+    entry: 'campaign_myskates/community_growth.social',
+    tree: ['📁 reddit_discussions/', '📁 facebook_group_engagement/', '📄 user_generated_content.csv', '📄 referral_rewards.json', '📄 community_newsletter.config'],
+    details: { channel: 'Community Marketing & UGC', platforms: 'Discord, Reddit, Facebook Groups', tools: 'Buffer, Canva, Typeform', focus: 'User-Generated Content Generation' }
+  },
+  8: {
+    entry: 'campaign_qdel/acquisition_channels.csv',
+    tree: ['📁 referral_campaigns/', '📁 programmatic_display/', '📄 affiliate_networks.json', '📄 retention_cohorts.csv', '📄 app_install_funnels.json'],
+    details: { channel: 'Multi-Channel Acquisition', platforms: 'Google App Campaigns, Apple Search Ads', tools: 'AppsFlyer, Google Analytics, Firebase', focus: 'App Install Volumes & LTV Boost' }
+  },
+  2: {
+    entry: 'campaign_bepocart_web/seo_cro_audit.json',
+    tree: ['📁 ecom_seo_hierarchy/', '📁 product_page_cro/', '📄 structured_schema_data.json', '📄 cart_abandonment_emails.config', '📄 page_speed_performance.csv'],
+    details: { channel: 'E-commerce SEO & CRO Strategy', platforms: 'Shopify Plus, Google Tag Manager', tools: 'Ahrefs, Hotjar, Shopify Analytics', focus: 'Average Order Value (AOV) Boost' }
+  },
+  10: {
+    entry: 'campaign_backbone/marketing_automation.json',
+    tree: ['📁 lifecycle_stages/', '📁 marketing_funnel/', '📄 lead_nurture_drip.config', '📄 sync_log_salesforce.csv', '📄 customer_segmentation.xlsx'],
+    details: { channel: 'Marketing Automation & Lifecycle', platforms: 'HubSpot, Salesforce, Zapier', tools: 'Zapier, HubSpot, Marketo', focus: 'Sales-Marketing Alignment & Pipeline Growth' }
+  }
 };
 
 /* ── Animated count-up metric ───────────────────── */
@@ -53,17 +93,17 @@ function MetricValue({ value }) {
 
 /* ── IDE Terminal widget ────────────────────────── */
 function IDETerminal({ project }) {
-  const arch = ARCHITECTURES[project.id] || { entry: 'main.js', tree: ['📁 src/', '📄 package.json'], details: { framework: 'Vanilla JS', backend: 'REST API', database: 'IndexedDB', hosting: 'Cloudflare' } };
+  const arch = ARCHITECTURES[project.id] || { entry: 'campaign/seo_audit.json', tree: ['📁 ad_campaigns/', '📄 google_analytics.csv'], details: { channel: 'Organic Search (SEO)', platforms: 'Google Analytics 4', tools: 'SEMrush', focus: 'Traffic Growth' } };
   const [activeFile, setActiveFile] = useState(arch.entry);
   const [lines, setLines] = useState([]);
   useEffect(() => {
     const log = [
-      `$ npm run build --project=${project.title.toLowerCase().replace(/\s+/g, '')}`,
-      `> Fetching source tree...`,
-      `> Framework: ${arch.details.framework}`,
-      `> Resolving dependencies...`,
-      `> Linking DB [${arch.details.database}]...`,
-      `✔ Architecture compiled successfully.`
+      `$ bpx run-audit --campaign=${project.title.toLowerCase().replace(/\s+/g, '')}`,
+      `> Crawling marketing parameters...`,
+      `> Channel: ${arch.details.channel}`,
+      `> Syncing tools [${arch.details.tools}]...`,
+      `> Linking GA4 & data sources...`,
+      `✔ Campaign audit compiled successfully.`
     ];
     setLines([]); let i = 0;
     const id = setInterval(() => { if (i < log.length) setLines(p => [...p, log[i++]]); else clearInterval(id); }, 220);
@@ -74,11 +114,11 @@ function IDETerminal({ project }) {
     <div className="ide-terminal">
       <div className="ide-terminal__titlebar">
         <div className="ide-terminal__macdots"><span className="dot dot-red" /><span className="dot dot-yellow" /><span className="dot dot-green" /></div>
-        <span className="ide-terminal__title">{project.title.toLowerCase().replace(/\s+/g, '')} — arch_log</span>
+        <span className="ide-terminal__title">{project.title.toLowerCase().replace(/\s+/g, '')} — audit_log</span>
       </div>
       <div className="ide-terminal__layout">
         <div className="ide-terminal__sidebar">
-          <span className="sidebar-title">workspace</span>
+          <span className="sidebar-title">campaign_workspace</span>
           <div className="sidebar-tree">
             {arch.tree.map((n, i) => <div key={i} className={`tree-node${activeFile === n ? ' active' : ''}`} onClick={() => !n.startsWith('📁') && setActiveFile(n)}>{n}</div>)}
           </div>
@@ -90,9 +130,9 @@ function IDETerminal({ project }) {
             <div className="console-cursor" />
           </div>
           <div className="editor-details">
-            <span className="detail-header">// stack summary</span>
+            <span className="detail-header">// marketing stack & focus</span>
             <div className="detail-grid">
-              {[['Framework', arch.details.framework], ['Backend', arch.details.backend], ['Database', arch.details.database], ['Hosting', arch.details.hosting]].map(([k, v]) => (
+              {[['Channel', arch.details.channel], ['Platforms', arch.details.platforms], ['Tools', arch.details.tools], ['Campaign Focus', arch.details.focus]].map(([k, v]) => (
                 <div key={k} className="detail-item"><span className="lbl">{k}:</span><span className="val">{v}</span></div>
               ))}
             </div>
@@ -383,17 +423,17 @@ export default function ProjectDetails({ project }) {
                 {project.tech && (
                   <motion.div className="pd__card pd__tech-card" variants={itemV}>
                     <div className="pd__card-header">
-                      <div className="pd__card-icon"><Code2 size={17} /></div>
-                      <h3>Technology Stack</h3>
+                      <div className="pd__card-icon"><Layers size={17} /></div>
+                      <h3>Campaign Architecture</h3>
                     </div>
                     <div className="pd__tech-grid">
                       {(() => {
                         const arch = ARCHITECTURES[project.id] || { details: {} };
                         return [
-                          { Icon: Code2, label: 'Frontend', val: arch.details.framework || project.tech[0] || 'React' },
-                          { Icon: Server, label: 'Backend', val: arch.details.backend || project.tech[1] || 'Node.js' },
-                          { Icon: Database, label: 'Database', val: arch.details.database || project.tech[2] || 'PostgreSQL' },
-                          { Icon: Cloud, label: 'Deployment', val: arch.details.hosting || project.tech[3] || 'Cloud Hosted' },
+                          { Icon: Layers, label: 'Channel', val: arch.details.channel || project.tech[0] || 'Marketing' },
+                          { Icon: Globe, label: 'Platforms', val: arch.details.platforms || project.tech[1] || 'Google, Meta' },
+                          { Icon: Terminal, label: 'Tools', val: arch.details.tools || project.tech[2] || 'Analytics' },
+                          { Icon: Zap, label: 'Campaign Focus', val: arch.details.focus || project.tech[3] || 'ROI Growth' },
                         ].map(({ Icon, label, val }) => (
                           <div key={label} className="pd__tech-item">
                             <div className="pd__tech-icon"><Icon size={16} /></div>
@@ -444,7 +484,7 @@ export default function ProjectDetails({ project }) {
 
                 {/* Tab controls */}
                 <div className="pd__tab-controls">
-                  {[['screen', 'View Screen', Globe], ['tech', 'System Stack', Terminal]].map(([id, label, Icon]) => (
+                  {[['screen', 'View Screen', Globe], ['tech', 'Campaign Stack', Terminal]].map(([id, label, Icon]) => (
                     <button key={id} className={`pd__tab-btn${activeTab === id ? ' active' : ''}`} onClick={() => setActiveTab(id)}>
                       <Icon size={12} /><span>{label}</span>
                     </button>

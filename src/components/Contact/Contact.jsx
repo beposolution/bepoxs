@@ -86,18 +86,18 @@ export default function Contact() {
           <div className="cta__inner">
             {/* Badge pills */}
             <div className="cta__badge-row">
-              <span className="cta__badge">🚀 Fast Delivery</span>
-              <span className="cta__badge">⭐ Premium Quality</span>
-              <span className="cta__badge">🔒 Secure &amp; Scalable</span>
+              <span className="cta__badge">📈 High-ROI Campaigns</span>
+              <span className="cta__badge">🎯 Laser-Targeted Audiences</span>
+              <span className="cta__badge">📊 Real-Time Analytics</span>
             </div>
 
             <h2 className="contact__cta-title">
-              Ready to Build Something
-              <span className="cta__title-highlight"> Amazing?</span>
+              Ready to Scale Your
+              <span className="cta__title-highlight"> Digital Brand?</span>
             </h2>
             <p className="contact__cta-text">
-              Let's transform your vision into a product that users love and businesses rely on.
-              <br />From idea to launch — we've got you covered.
+              Let's turn your marketing budget into trackable revenue and exponential growth.
+              <br />From strategy to scale — we've got you covered.
             </p>
 
             <div className="contact__cta-actions">
@@ -107,8 +107,8 @@ export default function Contact() {
                   Start a Project <ArrowRight size={18} />
                 </span>
               </a>
-              <a href="#portfolio" className="cta__btn-secondary" onClick={handleRipple}>
-                <span>View Our Work</span>
+              <a href="#services" className="cta__btn-secondary" onClick={handleRipple}>
+                <span>Explore Services</span>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 8H13M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

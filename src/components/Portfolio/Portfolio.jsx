@@ -6,36 +6,57 @@ import './Portfolio.css';
 
 /* ── tech-tag colour map ── */
 const TECH_COLORS = {
+  'SEO Audit': { bg: '#dbeafe', text: '#1e40af' },
+  SEMrush: { bg: '#ffedd5', text: '#d97706' },
+  GA4: { bg: '#fef3c7', text: '#d97706' },
+  'Link Building': { bg: '#dcfce7', text: '#166534' },
+  'Meta Ads': { bg: '#e0e7ff', text: '#3730a3' },
+  'Google Ads': { bg: '#fef9c3', text: '#854d0e' },
+  'CPA Scaling': { bg: '#ffe4e6', text: '#be123c' },
+  'ROAS Analysis': { bg: '#f3e8ff', text: '#6b21a8' },
+  'HubSpot CRM': { bg: '#ffedd5', text: '#c2410c' },
+  'Email Marketing': { bg: '#e0e7ff', text: '#4338ca' },
+  Copywriting: { bg: '#e0f2fe', text: '#0369a1' },
+  Zapier: { bg: '#ffedd5', text: '#ea580c' },
+  'CRO Strategy': { bg: '#d1fae5', text: '#065f46' },
+  'Google Tag Manager': { bg: '#e0f2fe', text: '#0284c7' },
+  'A/B Testing': { bg: '#ffe4e6', text: '#b91c1c' },
+  'Local SEO': { bg: '#dcfce7', text: '#15803d' },
+  'Google Business': { bg: '#e0f2fe', text: '#1d4ed8' },
+  'Hyperlocal PPC': { bg: '#ffe4e6', text: '#be123c' },
+  Analytics: { bg: '#e0e7ff', text: '#3730a3' },
+  'Social Strategy': { bg: '#fce7f3', text: '#be185d' },
+  'Instagram Growth': { bg: '#fce7f3', text: '#db2777' },
+  'TikTok Video': { bg: '#e0f7fa', text: '#006064' },
+  'Content Production': { bg: '#fef3c7', text: '#b45309' },
+  'Community Mgmt': { bg: '#e0f2fe', text: '#0369a1' },
+  'UGC Content': { bg: '#dcfce7', text: '#166534' },
+  'Influence Marketing': { bg: '#f3e8ff', text: '#701a75' },
+  TikTok: { bg: '#fce7f3', text: '#db2777' },
+  'App Store Ads': { bg: '#e0f2fe', text: '#0369a1' },
+  'Google App Campaigns': { bg: '#fef3c7', text: '#b45309' },
+  'App Tracking': { bg: '#e0e7ff', text: '#4338ca' },
+  Figma: { bg: '#f3e8ff', text: '#6b21a8' },
+  'Shopify Schema': { bg: '#dcfce7', text: '#166534' },
+  'E-commerce CRO': { bg: '#d1fae5', text: '#065f46' },
+  'Marketing Automation': { bg: '#f3e8ff', text: '#6b21a8' },
+  'Zapier Flows': { bg: '#ffedd5', text: '#ea580c' },
+  'Lead Scoring': { bg: '#f3e8ff', text: '#7c3aed' },
   React: { bg: '#dbeafe', text: '#1e40af' },
   'Next.js': { bg: '#e0e7ff', text: '#3730a3' },
-  Flutter: { bg: '#ccfbf1', text: '#0f766e' },
-  Dart: { bg: '#ccfbf1', text: '#0f766e' },
-  Firebase: { bg: '#ffedd5', text: '#9a3412' },
-  'Node.js': { bg: '#dcfce7', text: '#166534' },
-  Express: { bg: '#f1f5f9', text: '#334155' },
-  PostgreSQL: { bg: '#ede9fe', text: '#5b21b6' },
   TailwindCSS: { bg: '#cffafe', text: '#155e75' },
-  Vite: { bg: '#fef3c7', text: '#92400e' },
-  'Android SDK': { bg: '#dcfce7', text: '#166534' },
-  'iOS SDK': { bg: '#f1f5f9', text: '#334155' },
-  Django: { bg: '#dcfce7', text: '#166534' },
-  Python: { bg: '#fef9c3', text: '#854d0e' },
-  SQLite: { bg: '#e0e7ff', text: '#3730a3' },
-  Stripe: { bg: '#ede9fe', text: '#5b21b6' },
-  'Google Maps API': { bg: '#dbeafe', text: '#1e40af' },
-  MongoDB: { bg: '#dcfce7', text: '#166534' },
 };
 
 /* ── category accent colours ── */
 const CATEGORY_ACCENTS = {
-  Websites: '#2563eb',
-  'Web Apps': '#2563eb',
-  'Mobile Apps': '#7c3aed',
-  Design: '#059669',
+  SEO: '#2563eb',
+  'Paid Ads': '#ef4444',
+  'Social Media': '#ec4899',
+  'Content Marketing': '#10b981',
 };
 
 /* ── filter tabs ── */
-const FILTERS = ['All', 'Websites', 'Web Apps', 'Mobile Apps'];
+const FILTERS = ['All', 'SEO', 'Paid Ads', 'Social Media', 'Content Marketing'];
 
 /* ── Framer Motion helpers ── */
 const containerVariants = {
@@ -70,10 +91,10 @@ export default function Portfolio() {
     : PROJECTS.filter(p => p.category === activeFilter);
 
   const CATEGORY_ACCENTS_RGB = {
-    Websites: '33, 150, 243',
-    'Web Apps': '33, 150, 243',
-    'Mobile Apps': '124, 58, 237',
-    Design: '5, 150, 105',
+    SEO: '37, 99, 235',
+    'Paid Ads': '239, 68, 68',
+    'Social Media': '236, 72, 153',
+    'Content Marketing': '16, 185, 129',
   };
 
   const handleMouseMove = (e) => {

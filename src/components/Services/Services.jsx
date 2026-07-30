@@ -7,7 +7,7 @@ import './Services.css';
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -20,7 +20,7 @@ const cardVariants = {
   },
 };
 
-function ServiceCard({ service }) {
+function ServiceCard({ service, index }) {
   const cardRef = useRef(null);
   const Icon = LucideIcons[service.icon] || LucideIcons.Box;
 
@@ -52,6 +52,7 @@ function ServiceCard({ service }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
+      <div className="service-card__badge">0{index + 1}</div>
       <div className="service-card__icon">
         <Icon size={26} />
       </div>
@@ -90,8 +91,8 @@ export default function Services() {
             Our Services
           </h2>
           <p className="section-subtitle">
-            End-to-end software solutions tailored to transform your ideas into
-            powerful digital products.
+            Tailored digital growth & marketing solutions engineered to strengthen brand identity,
+            attract quality customers, and achieve sustainable revenue growth.
           </p>
         </div>
 
@@ -100,10 +101,10 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          {SERVICES.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+          {SERVICES.map((service, idx) => (
+            <ServiceCard key={service.id} service={service} index={idx} />
           ))}
         </motion.div>
       </div>

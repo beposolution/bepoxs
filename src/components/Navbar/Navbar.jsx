@@ -7,7 +7,7 @@ export default function Navbar({ currentProject }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // Combined scroll listener: handles scrolled state and closes mobile menu on scroll
+  // Combined scroll listener
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
@@ -19,14 +19,14 @@ export default function Navbar({ currentProject }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [mobileOpen]);
 
-  // Section observer to track current position and highlight active nav link
+  // Section observer to track active section
   useEffect(() => {
     if (currentProject) {
       setActiveSection('');
       return;
     }
 
-    const sections = ['services', 'portfolio', 'process', 'technologies', 'contact'];
+    const sections = ['services', 'about', 'why-us', 'technologies', 'contact'];
     const observerOptions = {
       root: null,
       rootMargin: '-30% 0px -40% 0px',
@@ -34,7 +34,6 @@ export default function Navbar({ currentProject }) {
     };
 
     const observerCallback = (entries) => {
-      // If at the absolute bottom of the page, force 'contact' to be active
       const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60;
       if (isAtBottom) {
         setActiveSection('contact');
@@ -55,7 +54,6 @@ export default function Navbar({ currentProject }) {
       if (el) observer.observe(el);
     });
 
-    // Fallback scroll listener specifically for the bottom of the page
     const handleScrollBottom = () => {
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
         setActiveSection('contact');
@@ -69,7 +67,6 @@ export default function Navbar({ currentProject }) {
     };
   }, [currentProject]);
 
-  // Close mobile drawer on any hash change
   useEffect(() => {
     const handleHash = () => {
       setMobileOpen(false);
@@ -103,7 +100,6 @@ export default function Navbar({ currentProject }) {
     btn.appendChild(circle);
   };
 
-  // Nav click callback that handles smooth scrolling and detail-to-home redirection
   const handleNavLinkClick = (e, href) => {
     const isDetails = window.location.hash.startsWith('#/project/');
 
@@ -117,11 +113,8 @@ export default function Navbar({ currentProject }) {
 
     if (isDetails) {
       e.preventDefault();
-      // Block the automatic scroll-restoration in App.jsx to let this custom smooth scroll succeed
       window.__blockScrollRestoration = true;
-      // 1. Navigate back to home first
       window.location.hash = '#/';
-      // 2. Wait 300ms for home view mount, then scroll smoothly
       setTimeout(() => {
         const targetId = href.replace('#', '');
         const element = document.getElementById(targetId);
@@ -136,7 +129,6 @@ export default function Navbar({ currentProject }) {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-      // Update history hash state without manual jumping
       window.history.pushState(null, null, href);
     }
     setMobileOpen(false);
@@ -146,7 +138,7 @@ export default function Navbar({ currentProject }) {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} id="navbar">
       <div className="navbar__inner">
         <a href="#/" onClick={(e) => handleNavLinkClick(e, '#')} className="navbar__logo">
-          <img src="/bepo-xs.png" alt="Beposoft Logo" className="navbar__logo-img" />
+          <img src="/bepo-xs.png" alt="Bepoxs Logo" className="navbar__logo-img" />
         </a>
 
         <div className="navbar__links">
@@ -206,9 +198,9 @@ export default function Navbar({ currentProject }) {
         <a
           href="#contact"
           className="btn btn-primary navbar__mobile-cta"
-onClick={(e) => { handleRipple(e); handleNavLinkClick(e, '#contact'); closeMobile(); }}
+          onClick={(e) => { handleRipple(e); handleNavLinkClick(e, '#contact'); closeMobile(); }}
         >
-          Get a Quote
+          Get Started
         </a>
       </div>
 
