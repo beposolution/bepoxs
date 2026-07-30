@@ -1,1 +1,0 @@
-"  { name: 'Django', icon: 'django' },\n  { name: 'Python', icon: 'python' },\n  { name: 'TypeScript', icon: 'typescript' },\n  { name: 'Docker', icon: 'docker' },\n  { name: 'GraphQL', icon: 'graphql' },\n];"

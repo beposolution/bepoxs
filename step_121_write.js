@@ -1,1 +1,0 @@
-"    color: 'linear-gradient(135deg, #d30405, #f00607)',"

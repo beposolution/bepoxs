@@ -595,6 +595,7 @@
   color: var(--color-text-primary);
 }
 
+
 @media (max-width: 768px) {
   .contact__layout { grid-template-columns: 1fr; gap: 2rem; }
 }

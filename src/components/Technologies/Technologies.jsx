@@ -13,49 +13,6 @@ const TECH_SVGS = {
       <ellipse cx="24" cy="24" rx="20" ry="8" stroke="#61DAFB" strokeWidth="1.5" fill="none" transform="rotate(120 24 24)" />
     </svg>
   ),
-  flutter: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M28 4L8 24l6 6L34 10h-6zm0 20l-8 8 6 6 14-14h-6l-8 8" fill="#42A5F5" />
-      <path d="M20 32l6 6 6-6-6-6z" fill="#1565C0" />
-    </svg>
-  ),
-  nodejs: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M24 6l16 9.2v18.4L24 42 8 33.6V15.2L24 6z" fill="#43A047" />
-      <text x="24" y="29" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold" fontFamily="sans-serif">N</text>
-    </svg>
-  ),
-  firebase: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M12 38l4-28 6 12-10 16z" fill="#FFA000" />
-      <path d="M16 10l6 12 10-8L16 10z" fill="#F57C00" />
-      <path d="M12 38l20-24 4 4-18 24-6-4z" fill="#FFCA28" />
-    </svg>
-  ),
-  aws: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <rect x="8" y="14" width="32" height="20" rx="4" fill="#FF9900" opacity="0.9" />
-      <text x="24" y="28" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="sans-serif">AWS</text>
-    </svg>
-  ),
-  mongodb: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M24 6c-2 8-8 14-8 22a8 8 0 0016 0c0-8-6-14-8-22z" fill="#4CAF50" />
-      <path d="M23 28h2v12h-2z" fill="#388E3C" />
-    </svg>
-  ),
-  swift: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <rect x="6" y="6" width="36" height="36" rx="8" fill="#F05138" />
-      <path d="M14 32c8-4 12-12 12-12s-4 4-10 6c6-4 10-12 10-12s-12 10-16 14c2 2 6 6 12 6" fill="white" opacity="0.9" />
-    </svg>
-  ),
-  kotlin: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <defs><linearGradient id="kg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#7F52FF" /><stop offset="100%" stopColor="#2196F3" /></linearGradient></defs>
-      <path d="M8 8h32L24 24l16 16H8V8z" fill="url(#kg)" />
-    </svg>
-  ),
   figma: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
       <circle cx="28" cy="16" r="6" fill="#1ABCFE" />
@@ -65,29 +22,10 @@ const TECH_SVGS = {
       <path d="M12 30a6 6 0 0012 0v-6h-6a6 6 0 00-6 6z" fill="#F24E1E" />
     </svg>
   ),
-  postgresql: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <ellipse cx="24" cy="18" rx="14" ry="8" fill="#336791" opacity="0.3" />
-      <path d="M24 10c-7.7 0-14 3.6-14 8v12c0 4.4 6.3 8 14 8s14-3.6 14-8V18c0-4.4-6.3-8-14-8z" stroke="#336791" strokeWidth="2" fill="none" />
-      <ellipse cx="24" cy="18" rx="14" ry="8" stroke="#336791" strokeWidth="2" fill="#336791" opacity="0.15" />
-      <text x="24" y="32" textAnchor="middle" fill="#336791" fontSize="9" fontWeight="bold" fontFamily="sans-serif">PG</text>
-    </svg>
-  ),
   nextjs: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
       <circle cx="24" cy="24" r="22" fill="#000000" />
       <path d="M37 36L22.5 17h-3v14h3v-9.5L34.5 37c2.5-3 4-7 4-11 0-8.8-7.2-16-16-16S6.5 17.2 6.5 26s7.2 16 16 16c3.8 0 7.2-1.3 10-3.5L37 36zm-17.5-19h3v19h-3V17z" fill="#ffffff" />
-    </svg>
-  ),
-  html: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M8 4l3.5 32L24 41l12.5-5L40 4H8zm24 13H17.2l.4 4H32l-.8 9-7.2 2.5-7.2-2.5-.4-5h4l.2 2.2 3.4 1 3.4-1 .3-3.7H13.6L12.5 11h20.5l-.6 6z" fill="#E34F26" />
-    </svg>
-  ),
-  bootstrap: (
-    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <rect x="4" y="4" width="40" height="40" rx="8" fill="#7952B3" />
-      <path d="M16 14h9c3 0 5 1.5 5 4s-1.5 3.5-3.5 4c2.5.5 4 1.5 4 4.5s-2.5 5.5-6.5 5.5h-8V14zm4 4v5h5c1.5 0 2.5-.5 2.5-2.5s-1-2.5-2.5-2.5h-5zm0 9v5h6c1.5 0 2.5-.5 2.5-2.5s-1-2.5-2.5-2.5h-6z" fill="#ffffff" />
     </svg>
   ),
   tailwindcss: (
@@ -95,49 +33,83 @@ const TECH_SVGS = {
       <path d="M24 14.5c-4.8 0-7.8 2.4-9 7.2 1.8-2.4 3.9-3.3 6.3-2.7 1.4.3 2.4 1.4 3.5 2.5C26.6 23.3 29.3 26 34.5 26c4.8 0 7.8-2.4 9-7.2-1.8 2.4-3.9 3.3-6.3 2.7-1.4-.3-2.4-1.4-3.5-2.5-1.8-1.8-4.5-4.5-9.7-4.5zm-10.5 11c-4.8 0-7.8 2.4-9 7.2 1.8-2.4 3.9-3.3 6.3-2.7 1.4.3 2.4 1.4 3.5 2.5 1.8 1.8 4.5 4.5 9.7 4.5 4.8 0 7.8-2.4 9-7.2-1.8 2.4-3.9 3.3-6.3 2.7-1.4-.3-2.4-1.4-3.5-2.5-1.8-1.8-4.5-4.5-9.7-4.5z" fill="#06B6D4" />
     </svg>
   ),
-  javascript: (
+  google_analytics: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <rect x="4" y="4" width="40" height="40" fill="#F7DF1E" />
-      <path d="M36 34.5c-.3.8-.8 1.4-1.5 1.8s-1.8.6-3.2.6c-1.3 0-2.3-.3-3-.9s-1.1-1.4-1.2-2.5h3.8c0 .6.2 1 .5 1.3s.9.4 1.7.4c.7 0 1.2-.1 1.5-.4s.4-.6.4-1c0-.4-.1-.7-.4-.9s-.8-.4-1.6-.7l-1.3-.5c-1.6-.6-2.6-1.2-3.1-1.8s-.8-1.5-.8-2.6c0-1.2.4-2.2 1.2-2.9s2.1-1 3.8-1c1.4 0 2.5.3 3.1.9s.9 1.4 1 2.3h-3.7c0-.5-.1-.8-.3-1.1s-.7-.3-1.3-.3c-.7 0-1.1.1-1.4.3s-.4.5-.4.8c0 .3.1.6.4.7s.7.3 1.4.5l1.3.5c1.7.6 2.7 1.2 3.2 1.9s.7 1.6.7 2.7zM24 37h-3.8V17H24v20z" fill="#000000" />
+      <rect x="10" y="28" width="6" height="12" rx="1.5" fill="#F4B400" />
+      <rect x="18" y="20" width="6" height="20" rx="1.5" fill="#DB4437" />
+      <rect x="26" y="12" width="6" height="28" rx="1.5" fill="#EF6C00" />
+      <rect x="34" y="4" width="6" height="36" rx="1.5" fill="#FF9E0F" />
     </svg>
   ),
-  django: (
+  meta_ads: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <rect x="4" y="4" width="40" height="40" rx="8" fill="#092E20" />
-      <text x="24" y="31" textAnchor="middle" fill="#ffffff" fontSize="18" fontWeight="bold" fontFamily="Georgia, serif">dj</text>
+      <path d="M14.1 30.2c-3.4 0-6.1-2.8-6.1-6.2s2.7-6.2 6.1-6.2c3.1 0 5.4 2.1 6.5 5 1.1-2.9 3.4-5 6.5-5 3.4 0 6.1 2.8 6.1 6.2s-2.7 6.2-6.1 6.2c-3.1 0-5.4-2.1-6.5-5-1.1 2.9-3.4 5-6.5 5zm13.1-6.2c0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7-2.7 1.2-2.7 2.7zm-13.1 2.7c1.5 0 2.7-1.2 2.7-2.7s-1.2-2.7-2.7-2.7-2.7 1.2-2.7 2.7 1.2 2.7 2.7 2.7z" fill="#0064E0" />
     </svg>
   ),
-  python: (
+  google_ads: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M24 4c-6 0-10 1.5-10 6v6h10v2h-12c-4.5 0-6 2.5-6 7v6c0 4.5 1.5 7 6 7h4v-5c0-4.5 2.5-6 7-6h11c4.5 0 6-2.5 6-7v-6c0-4.5-1.5-7-6-7h-9v2h-1c0-4.5-4-5-9-5z" fill="#3776AB" />
-      <path d="M24 44c6 0 10-1.5 10-6v-6H24v-2h12c4.5 0 6-2.5 6-7v-6c0-4.5-1.5-7-6-7h-4v5c0 4.5-2.5 6-7 6H14c-4.5 0-6 2.5-6 7v6c0 4.5 1.5 7 6 7h9v-2h1c0 4.5 4 5 9 5z" fill="#FFE873" />
-      <circle cx="19.5" cy="9.5" r="1.5" fill="#fff" />
-      <circle cx="28.5" cy="38.5" r="1.5" fill="#000" />
+      <path d="M32 14.5L18.5 38H11l13.5-23.5L32 14.5z" fill="#F4B400" />
+      <path d="M18.5 38l13.5-23.5H39.5L26 38H18.5z" fill="#4285F4" />
+      <circle cx="35.75" cy="18" r="3.75" fill="#34A853" />
     </svg>
   ),
-  typescript: (
+  hubspot: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <rect x="4" y="4" width="40" height="40" fill="#3178C6" />
-      <text x="36" y="36" textAnchor="end" fill="#ffffff" fontSize="16" fontWeight="bold" fontFamily="sans-serif">TS</text>
+      <circle cx="20" cy="28" r="5" fill="#FF7A59" />
+      <line x1="20" y1="28" x2="34" y2="14" stroke="#FF7A59" strokeWidth="4" />
+      <line x1="20" y1="28" x2="20" y2="10" stroke="#FF7A59" strokeWidth="4" />
+      <line x1="20" y1="28" x2="36" y2="28" stroke="#FF7A59" strokeWidth="4" />
+      <circle cx="20" cy="10" r="4.5" fill="#FF7A59" />
+      <circle cx="34" cy="14" r="4.5" fill="#FF7A59" />
+      <circle cx="36" cy="28" r="4.5" fill="#FF7A59" />
     </svg>
   ),
-  docker: (
+  semrush: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M6 22h4v4H6v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zm-18-6h4v4H6v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zm12 6h4v4h-4v-4zm-6-6h4v4h-4v-4zm-6-6h4v4h-4v-4z" fill="#0db7ed" />
-      <path d="M42 28c-1.5 0-3-.5-4-1.5-3 3-8.5 3.5-12.5 3.5H10c-3 0-5-2-5-5v-1c6 0 9-3.5 11.5-6C19 15.5 22.5 14 26.5 14c8.5 0 14.5 4.5 15.5 12 1-.5 2-.5 3-.5v1c0 .8-.5 1.5-3 1.5z" fill="#0db7ed" />
+      <path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12-5.4 12-12 12-12-5.4-12-12z" fill="#FF642D" opacity="0.15" />
+      <path d="M24 8c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16S32.8 8 24 8zm0 26c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z" fill="#FF642D" />
+      <path d="M34 24h6c0-8.8-7.2-16-16-16v6c5.5 0 10 4.5 10 10z" fill="#430099" />
     </svg>
   ),
-  graphql: (
+  shopify: (
     <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
-      <path d="M24 4L6 14.5v21L24 46l18-10.5v-21L24 4z" stroke="#E10098" strokeWidth="2" fill="none" />
-      <circle cx="24" cy="4" r="3" fill="#E10098" />
-      <circle cx="6" cy="14.5" r="3" fill="#E10098" />
-      <circle cx="6" cy="35.5" r="3" fill="#E10098" />
-      <circle cx="24" cy="46" r="3" fill="#E10098" />
-      <circle cx="42" cy="35.5" r="3" fill="#E10098" />
-      <circle cx="42" cy="14.5" r="3" fill="#E10098" />
-      <path d="M24 4l-18 10.5M6 14.5l18 21m0 0.5l18-21m-18 21v-31.5M6 14.5h36M6 35.5l36-21M6 35.5l18-31.5M42 35.5L24 4m0 42V14.5" stroke="#E10098" strokeWidth="1.5" />
-      <circle cx="24" cy="25" r="4" fill="#E10098" />
+      <path d="M15 14l-3 26h24l-3-26H15z" fill="#95BF47" />
+      <path d="M24 4c-3.3 0-6 2.7-6 6v4h12v-4c0-3.3-2.7-6-6-6zm-4 10v-4c0-2.2 1.8-4 4-4s4 1.8 4 4v4H20z" fill="#5E8E2D" />
+      <path d="M15 14h18l1.5-3.5L30 8H18l-4.5 2.5L15 14z" fill="#7AB55C" />
+    </svg>
+  ),
+  webflow: (
+    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+      <rect width="40" height="40" x="4" y="4" rx="8" fill="#4353FF" />
+      <text x="24" y="30" textAnchor="middle" fill="white" fontSize="22" fontWeight="900" fontFamily="system-ui, sans-serif">W</text>
+    </svg>
+  ),
+  wordpress: (
+    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+      <circle cx="24" cy="24" r="20" fill="#21759B" />
+      <circle cx="24" cy="24" r="18" stroke="#ffffff" strokeWidth="1.5" fill="none" />
+      <path d="M15 14.5l5.5 15.5 3.5-10-3-5.5h-6zM33 14.5h-6l-3 5.5 3.5 10 5.5-15.5zm-14.7 17l5.7-16 5.7 16-5.7-8-5.7 8z" fill="#ffffff" />
+    </svg>
+  ),
+  mailchimp: (
+    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+      <circle cx="24" cy="24" r="20" fill="#FFE01B" />
+      <path d="M15 18h18v12H15z" fill="#000000" opacity="0.1" />
+      <path d="M13 22l11 7 11-7v11H13V22z" fill="#231F20" />
+      <path d="M13 20l11 7 11-7H13z" fill="#231F20" />
+    </svg>
+  ),
+  zapier: (
+    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+      <circle cx="24" cy="24" r="20" fill="#FFEBE0" />
+      <path d="M24 10v28M10 24h28M14.1 14.1l19.8 19.8M14.1 33.9l19.8-19.8" stroke="#FF4F00" strokeWidth="5.5" strokeLinecap="round" />
+    </svg>
+  ),
+  hotjar: (
+    <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+      <path d="M24 4c0 0-14 8-14 20s10 20 14 20 14-8 14-20S24 4 24 4z" fill="#FF5C35" opacity="0.25" />
+      <path d="M24 10c0 0-10 6-10 16s8 16 10 16 10-6 10-16-8-16-10-16z" fill="#FF5C35" />
+      <path d="M24 18c0 0-6 4-6 10s4 10 6 10 6-4 6-10-4-10-6-10z" fill="#FF3B30" />
     </svg>
   ),
 };

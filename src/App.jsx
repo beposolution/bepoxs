@@ -7,23 +7,25 @@ import ScrollProgress from './components/ScrollProgress/ScrollProgress';
 import Hero from './components/Hero/Hero';
 import Marquee from './components/Marquee/Marquee';
 import Services from './components/Services/Services';
+import About from './components/About/About';
+import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import Stats from './components/Stats/Stats';
 import Process from './components/Process/Process';
-import Portfolio from './components/Portfolio/Portfolio';
 import Technologies from './components/Technologies/Technologies';
 import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import BackToTop from './components/BackToTop/BackToTop';
 import ProjectDetails from './components/Portfolio/ProjectDetails';
+import TermsModal from './components/TermsModal/TermsModal';
 import { PROJECTS } from './data/content';
 
 function App() {
   const [currentProject, setCurrentProject] = useState(null);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
   const currentProjectRef = useRef(null);
   const scrollPosRef = useRef(0);
   
-  // Keep currentProjectRef in sync with currentProject state to avoid closure issues in the listener
   useEffect(() => {
     currentProjectRef.current = currentProject;
   }, [currentProject]);
@@ -39,7 +41,6 @@ function App() {
         const projectId = parseInt(hash.replace('#/project/', ''), 10);
         const project = PROJECTS.find(p => p.id === projectId);
         if (project) {
-          // If we are currently on the home page, save the scroll position
           if (!currentProjectRef.current) {
             scrollPosRef.current = window.scrollY;
           }
@@ -51,8 +52,6 @@ function App() {
       
       setCurrentProject(null);
 
-      // If returning to home, restore scroll position after components mount
-      // If returning to home, always scroll to top
       if (currentProjectRef.current) {
         if (window.__blockScrollRestoration) {
           window.__blockScrollRestoration = false;
@@ -112,7 +111,6 @@ function App() {
 
     window.addEventListener('mousemove', moveCursor);
 
-    // Dynamic selection of interactive elements for cursor resizing
     const interactives = document.querySelectorAll('a, button, select, input, textarea, [role="button"]');
     interactives.forEach((el) => {
       el.addEventListener('mouseenter', handleHoverStart);
@@ -126,11 +124,10 @@ function App() {
         el.removeEventListener('mouseleave', handleHoverEnd);
       });
     };
-  }, [currentProject]);
+  }, [currentProject, isTermsOpen]);
 
   return (
     <>
-      {/* Custom follow cursor elements */}
       <div className="custom-cursor">
         <div className="custom-cursor__dot" ref={cursorDotRef} />
         <div className="custom-cursor__ring" ref={cursorRingRef} />
@@ -140,11 +137,11 @@ function App() {
       <ScrollProgress />
       <Navbar currentProject={currentProject} />
       <main>
-<AnimatePresence mode="sync">
-            {currentProject ? (
+        <AnimatePresence mode="sync">
+          {currentProject ? (
             <motion.div
               key="details"
-             initial={{ opacity: 0, scale: 0.98 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 1 }}
               transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
@@ -154,7 +151,7 @@ function App() {
           ) : (
             <motion.div
               key="home"
-             initial={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
@@ -165,14 +162,18 @@ function App() {
                 <Services />
               </div>
               <div className="reveal-on-scroll">
+                <About />
+              </div>
+              <div className="reveal-on-scroll">
+                <WhyChooseUs />
+              </div>
+              <div className="reveal-on-scroll">
                 <Stats />
               </div>
               <div className="reveal-on-scroll">
                 <Process />
               </div>
-              <div className="reveal-on-scroll">
-                <Portfolio />
-              </div>
+
               <div className="reveal-on-scroll">
                 <Testimonials />
               </div>
@@ -186,8 +187,10 @@ function App() {
           )}
         </AnimatePresence>
       </main>
-      <Footer />
+
+      <Footer onOpenTerms={() => setIsTermsOpen(true)} />
       <BackToTop />
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
     </>
   );
 }

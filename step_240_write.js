@@ -1,1 +1,0 @@
-"  { name: 'Figma', icon: 'figma' },\n  { name: 'PostgreSQL', icon: 'postgresql' },\n  { name: 'Django', icon: 'django' },\n  { name: 'Python', icon: 'python' },\n];"

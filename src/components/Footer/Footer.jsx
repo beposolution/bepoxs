@@ -31,12 +31,12 @@ const InstagramIcon = () => (
   </svg>
 );
 
-export default function Footer() {
+export default function Footer({ onOpenTerms }) {
   const currentYear = new Date().getFullYear();
 
   const handleFooterNavClick = (e, href) => {
     const isDetails = window.location.hash.startsWith('#/project/');
-    if (!href || href === '#') return; // privacy/terms — no-op
+    if (!href || href === '#') return;
 
     e.preventDefault();
 
@@ -63,11 +63,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="/bepo-xs.png" alt="Beposoft Logo" className="footer__logo-img" />
+              <img src="/bepo-xs.png" alt="Bepoxs Logo" className="footer__logo-img" />
             </div>
             <p className="footer__tagline">{COMPANY_INFO.tagline}</p>
             <div className="footer__socials">
-              <a href={COMPANY_INFO.social.linkedin} className="footer__social-link" aria-label="LinkedIn">
+              <a href={COMPANY_INFO.social.linkedin} target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="LinkedIn">
                 <LinkedinIcon />
               </a>
               <a href={COMPANY_INFO.social.github} className="footer__social-link" aria-label="GitHub">
@@ -76,7 +76,7 @@ export default function Footer() {
               <a href={COMPANY_INFO.social.twitter} className="footer__social-link" aria-label="Twitter">
                 <TwitterIcon />
               </a>
-              <a href={COMPANY_INFO.social.instagram} className="footer__social-link" aria-label="Instagram">
+              <a href={COMPANY_INFO.social.instagram} target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="Instagram">
                 <InstagramIcon />
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function Footer() {
           <div>
             <h4 className="footer__col-title">Services</h4>
             <div className="footer__links">
-              {SERVICES.map((s) => (
+              {SERVICES.slice(0, 6).map((s) => (
                 <a
                   key={s.id}
                   href="#services"
@@ -132,8 +132,12 @@ export default function Footer() {
             © {currentYear} Bepoxs. All rights reserved.
           </span>
           <div className="footer__bottom-links">
-            <a href="#" className="footer__bottom-link">Privacy Policy</a>
-            <a href="#" className="footer__bottom-link">Terms of Service</a>
+            <button className="footer__bottom-link" onClick={onOpenTerms}>
+              Terms & Conditions
+            </button>
+            <button className="footer__bottom-link" onClick={onOpenTerms}>
+              Privacy & Expectations
+            </button>
           </div>
         </div>
       </div>
