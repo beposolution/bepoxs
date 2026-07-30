@@ -13,8 +13,8 @@ export const NAV_LINKS = [
 export const COMPANY_INFO = {
   name: 'Bepoxs',
   tagline: 'Future-Focused Digital Growth Partner. Every Brand Has a Story. Every Story Deserves to Grow.',
-  email: 'info@beposoft.com',
-  phone: '81578 45851',
+  email: 'Bepoxsconnect@gmail.com',
+  phone: '75938 35376',
   location: 'Kochi, Kerala, India',
   social: {
     linkedin: 'https://www.linkedin.com/company/michael-exportand-import-pvt-ltd/',

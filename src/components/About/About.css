@@ -305,3 +305,24 @@
     padding: 2.5rem 1.75rem;
   }
 }
+
+@media (max-width: 480px) {
+  .about__value-success-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about__banner {
+    padding: 2rem 1.25rem;
+  }
+  .about__purpose-promise-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about__value-card,
+  .about__success-card,
+  .identity-card {
+    padding: 1.5rem !important;
+  }
+  .trait-badge,
+  .voice-badge {
+    padding: 0.4rem 0.95rem;
+  }
+}
